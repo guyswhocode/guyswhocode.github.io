@@ -32,9 +32,6 @@ header#intro{
 header#intro .img-container{
 	padding:100px 0px;
 }
-header#intro img{
-	/* margin-top:80px; */
-}
 header#intro h1{
 	margin-top: 0px;
 	color:white;
@@ -125,10 +122,6 @@ text-align:justify;
 .social-container{
 	padding:20px 500px;
 }
-.social-container img{
-	fill:red;
-}
-
 
 
 /* Small Devices, Tablets */
