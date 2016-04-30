@@ -1,0 +1,139 @@
+/*
+	G > Ash > #4d4f53
+	[] > Green > #3bb874
+	*/
+/* @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700); */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
+body{
+
+}
+p{
+	font-size:18px;
+}
+section{
+	font-family: 'Ubuntu', sans-serif;
+}
+#intro .navbar-brand{
+ 	color:#3bb874;
+ 	font-weight:bold;
+}
+section#contact h2,
+section#testimonial h2{
+	text-align:center;
+}
+header#intro{
+	background-image:url('../img/coffee-code.jpg');
+	background-size:cover;
+	background-position: center center;
+	margin-top:0px;
+	height:700px;
+
+}
+header#intro .img-container{
+	padding:100px 0px;
+}
+header#intro img{
+	/* margin-top:80px; */
+}
+header#intro h1{
+	margin-top: 0px;
+	color:white;
+}
+
+
+/* About */
+section#about{
+	background-color: #3bb874;
+	color:white;
+}
+section#about h1,
+section#about h2{
+	color:white;
+	font-weight:bold;
+}
+section#about .sub-section{
+	padding:50px 30px 70px 30px;
+	text-align:justify;
+	font-weight:normal;
+}
+
+.form-control,
+.form-control:focus,
+.form-control:active{
+	box-shadow:none;
+}
+.btn{
+	margin-top:10px;
+}
+
+.form-control{
+	margin-top:10px;
+	border-color:#ddd;
+}
+
+footer{
+	margin-top:50px;
+}
+
+nav.navbar-default{
+	margin-bottom: 0px;
+	background:transparent;
+	border:none;
+}
+
+.navbar-brand{
+	font-family: 'Ubuntu', sans-serif;
+}
+.navbar-default .navbar-nav a{
+	border-bottom:2px solid transparent;
+	text-transform:uppercase;
+}
+
+.navbar-default .navbar-nav a:hover,
+.navbar-default .navbar-nav a:focus{
+	background-color: transparent;
+	color:white;
+	border-bottom:2px solid white;
+}
+
+/* Testimonial */
+section#testimonial{
+	margin-top:20px;
+}
+.persons{
+	margin-top:10px;
+}
+.person{
+	padding:5px 60px;
+}
+.avatar-container{
+	padding:0px 50px;
+}
+
+.person img{
+	border-radius:50%;
+	margin:0px auto;
+}
+.person h4{
+	text-align:center;
+}
+.person p{
+text-align:justify;
+}
+
+
+.social-container{
+	padding:20px 500px;
+}
+.social-container img{
+	fill:red;
+}
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	header#intro .img-container{
+		padding:100px;
+	}
+}
