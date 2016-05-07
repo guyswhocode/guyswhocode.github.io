@@ -6,7 +6,7 @@
 /* @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700); */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
 body{
-
+ background-color:#f8f8f8;
 }
 p{
 	font-size:18px;
@@ -22,6 +22,13 @@ section#contact h2,
 section#testimonial h2{
 	text-align:center;
 }
+
+section#specialization h2{
+margin-top:50px;
+margin-bottom:50px;
+text-transform:capitalize;
+}
+
 header#intro{
 	background-image:url('../img/coffee-code.jpg');
 	background-size:cover;
@@ -122,6 +129,38 @@ text-align:justify;
 
 .social-container{
 	padding:20px 500px;
+}
+
+#specialization .technology{
+	padding:10px 10px;
+	text-align: center;
+
+}
+
+#specialization .technology div{
+	background-color:#fff;
+	padding: 20px;
+	border-bottom-left-radius:2px;
+	border-bottom-right-radius:2px;
+		-webkit-transition: box-shadow 0.5s ease-in-out;
+	-moz-transition: box-shadow 0.5s ease-in-out;
+	-o-transition: box-shadow 0.5s ease-in-out;
+	transition: box-shadow 0.5s ease-in-out;
+	box-shadow: 0 2px 0 #cecece;
+}
+
+#specialization .technology div:hover{
+box-shadow: 0 2px 0 #3bb874;
+}
+
+#specialization .technology h3{
+	font-size:16px;
+}
+
+
+#specialization .technology p{
+	text-align: justify;
+	font-size:14px;
 }
 
 
