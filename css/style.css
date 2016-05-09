@@ -14,19 +14,43 @@ p{
 section{
 	font-family: 'Ubuntu', sans-serif;
 }
+
+.anim{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.box{
+	border-bottom-left-radius:2px;
+	border-bottom-right-radius:2px;
+	box-shadow: 0 2px 0 #cecece;
+	background-color: #fff;
+}
+
+.box:hover{
+	box-shadow: 0 2px 0 #3bb874;
+}
+
+h2.head{
+	font-weight:300;
+	text-align: center;
+	text-transform:capitalize;
+	margin-bottom: 40px;
+}
+
+section#contact,
+section#achievements,
+section#specialization,
+section#tagline,
+section#testimonial{
+margin-top:50px;
+}
+
 #intro .navbar-brand{
  	color:#3bb874;
  	font-weight:bold;
-}
-section#contact h2,
-section#testimonial h2{
-	text-align:center;
-}
-
-section#specialization h2{
-margin-top:50px;
-margin-bottom:50px;
-text-transform:capitalize;
 }
 
 header#intro{
@@ -45,7 +69,6 @@ header#intro h1{
 	color:white;
 }
 
-
 /* About */
 section#about{
 	background-color: #3bb874;
@@ -54,7 +77,7 @@ section#about{
 section#about h1,
 section#about h2{
 	color:white;
-	font-weight:bold;
+	font-weight:thin;
 }
 section#about .sub-section{
 	padding:50px 30px 70px 30px;
@@ -102,67 +125,155 @@ nav.navbar-default{
 }
 
 /* Testimonial */
-section#testimonial{
-	margin-top:20px;
+section#testimonial .person{
+	padding:5px 40px;
 }
-.persons{
-	margin-top:10px;
+section#testimonial .person > div{
+	border-bottom: 2px solid #3bb874;
+	border-radius:0px 0px 2px 2px;
+	background-color:#fff;
+	padding:10px 20px;
 }
-.person{
-	padding:5px 60px;
+section#testimonial .person .avatar-container{
+	padding:0px 60px;
 }
-.avatar-container{
-	padding:0px 50px;
-}
-
-.person img{
+section#testimonial .person img{
 	border-radius:50%;
 	margin:0px auto;
 }
-.person h4{
+section#testimonial .person h4{
 	text-align:center;
+	font-weight:400;
 }
-.person p{
-text-align:justify;
+section#testimonial .person p{
+	text-align: justify;
+	font-size: 16px;
+	font-weight: 300;
 }
-
-
-.social-container{
-	padding:20px 500px;
-}
-
-#specialization .technology{
+section#specialization .technology{
+	list-style: none;
 	padding:10px 10px;
 	text-align: center;
-
 }
 
-#specialization .technology div{
+section#specialization .technology div{
 	background-color:#fff;
 	padding: 20px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	border-bottom-left-radius:2px;
 	border-bottom-right-radius:2px;
-		-webkit-transition: box-shadow 0.5s ease-in-out;
-	-moz-transition: box-shadow 0.5s ease-in-out;
-	-o-transition: box-shadow 0.5s ease-in-out;
-	transition: box-shadow 0.5s ease-in-out;
 	box-shadow: 0 2px 0 #cecece;
 }
 
-#specialization .technology div:hover{
+section#specialization .technology div:hover{
 box-shadow: 0 2px 0 #3bb874;
 }
 
-#specialization .technology h3{
+section#specialization .technology h3{
 	font-size:16px;
 }
 
-
-#specialization .technology p{
+section#specialization .technology p{
 	text-align: justify;
 	font-size:14px;
 }
 
+section#contact{
+	background-color:#3bb874;
+	padding:100px 30px;
+}
+
+section#contact h3{
+	font-size: 5.5vw;
+	padding:20px 0px;
+}
+
+section#contact h3 a{
+	color: #4d4f53;
+	border: 8px solid #4d4f53;
+	padding: 20px 30px;
+}
+
+section#contact h3 a:hover{
+	color:white;
+	border-color:white;
+}
+section#achievements{
+	padding:100px 0px;
+}
+section#achievements .row{
+	margin:0px;
+}
+
+section#achievements .achievement{
+	text-align:center;
+}
+section#achievements .achievement h5{
+	font-size: 4vw;
+	color: #3bb874;
+}
+
+
+section#blog-posts{
+background-color: #4d4f53;
+}
+section#blog-posts h2{
+color:#f8f8f8;
+margin-bottom: 20px;
+}
+
+section#blog-posts .post{
+	padding:0px 20px;
+	margin-top:14px;
+}
+
+section#blog-posts .post div{
+	border-bottom: 2px solid #3bb874;
+	border-radius:0px 0px 2px 2px;
+	padding:6px 12px;
+	background-color: #636363;
+}
+
+section#blog-posts .post h3{
+	font-size: 18px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	font-weight:normal;
+	text-transform: capitalize;
+	color:#f8f8f8;
+}
+
+section#blog-posts .post p{
+	font-size:14px;
+	color:#eee;
+}
+
+section#blog-posts a.btn-default{
+	margin:30px 0px;
+	background-color: #636363;
+	color:#3bb874;
+	border-color:#3bb874;
+}
+
+section#tagline{
+	padding:100px 0px;
+	background-color: #4d4f53;
+}
+section#tagline .row{
+	margin:0px;
+}
+
+section#tagline h3{
+	font-size: 4vw;
+	color:#eee;
+	font-weight: 300;
+}
+/* 
+G > Ash > #4d4f53
+[] > Green > #3bb874 */
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
