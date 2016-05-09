@@ -6,7 +6,7 @@
 }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
 body{
- background-color:#f8f8f8;
+	background-color:#f8f8f8;
 }
 p{
 	font-size:18px;
@@ -45,12 +45,12 @@ section#achievements,
 section#specialization,
 section#tagline,
 section#testimonial{
-margin-top:50px;
+	margin-top:50px;
 }
 
 #intro .navbar-brand{
- 	color:#3bb874;
- 	font-weight:bold;
+	color:#3bb874;
+	font-weight:bold;
 }
 
 header#intro{
@@ -174,7 +174,7 @@ section#specialization .technology div{
 }
 
 section#specialization .technology div:hover{
-box-shadow: 0 2px 0 #3bb874;
+	box-shadow: 0 2px 0 #3bb874;
 }
 
 section#specialization .technology h3{
@@ -223,11 +223,11 @@ section#achievements .achievement h5{
 
 
 section#blog-posts{
-background-color: #4d4f53;
+	background-color: #4d4f53;
 }
 section#blog-posts h2{
-color:#f8f8f8;
-margin-bottom: 20px;
+	color:#f8f8f8;
+	margin-bottom: 20px;
 }
 
 section#blog-posts .post{
@@ -277,11 +277,7 @@ section#tagline h3{
 	color:#eee;
 	font-weight: 300;
 }
-/* 
-G > Ash > #4d4f53
-[] > Green > #3bb874 */
 
-/* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
 		padding:100px;
