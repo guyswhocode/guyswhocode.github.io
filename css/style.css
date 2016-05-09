@@ -150,6 +150,11 @@ section#testimonial .person p{
 	font-size: 16px;
 	font-weight: 300;
 }
+
+
+section#specialization ul{
+	padding-left:0px;
+}
 section#specialization .technology{
 	list-style: none;
 	padding:10px 10px;
@@ -280,5 +285,13 @@ G > Ash > #4d4f53
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
 		padding:100px;
+	}
+	section#tagline,
+	section#contact,
+	section#achievements{
+		padding:40px 0px;
+	}
+	section#about .sub-section{
+		padding: 30px;
 	}
 }
