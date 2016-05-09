@@ -1,9 +1,9 @@
-/*
-	G > Ash > #4d4f53
-	[] > Green > #3bb874
-	red > #FF6F59
-	*/
-/* @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700); */
+.color-ash{
+	color:#4d4f53;
+}
+.color-green{
+	color: #3bb874;
+}
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
 body{
  background-color:#f8f8f8;
@@ -252,10 +252,11 @@ section#blog-posts .post p{
 }
 
 section#blog-posts a.btn-default{
-	margin:30px 0px;
-	background-color: #636363;
+	border:2px solid #3bb874;
+	background-color: transparent;
 	color:#3bb874;
-	border-color:#3bb874;
+	font-weight:bold;
+	margin:30px 0px;
 }
 
 section#tagline{
