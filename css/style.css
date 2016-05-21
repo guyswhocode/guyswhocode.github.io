@@ -277,6 +277,15 @@ section#tagline h3{
 	font-weight: 300;
 }
 
+section#join-us .channel img{
+	padding:80px;
+}
+
+
+section#join-us .channel p.name{
+	text-align:center;
+}
+
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
 		padding:100px;
