@@ -174,10 +174,6 @@ section#contact h3 a{
 	border: 8px solid #4d4f53;
 	padding: 20px 30px;
 }
-section#contact h3 a:hover{
-	color:white;
-	border-color:white;
-}
 section#achievements{
 	padding:100px 0px;
 }
