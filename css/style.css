@@ -14,60 +14,50 @@ p{
 section{
 	font-family: 'Ubuntu', sans-serif;
 }
-
 .anim{
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 }
-
 .box{
 	border-bottom-left-radius:2px;
 	border-bottom-right-radius:2px;
 	box-shadow: 0 2px 0 #cecece;
 	background-color: #fff;
 }
-
 .box:hover{
 	box-shadow: 0 2px 0 #3bb874;
 }
-
 h2.head{
 	font-weight:300;
 	text-align: center;
 	text-transform:capitalize;
 	margin-bottom: 40px;
 }
-
 section#contact,
 section#specialization,
 section#tagline,
 section#testimonial{
 	margin-top:50px;
 }
-
 #intro .navbar-brand{
 	color:#3bb874;
 	font-weight:bold;
 }
-
 header#intro{
-	background-image:url('../img/coffee-code.jpg');
+	background:#4d4f53;
 	background-size:cover;
 	background-position: center center;
 	margin-top:0px;
-	height:700px;
-
 }
 header#intro .img-container{
-	padding:100px 0px;
+	padding:80px 0px 100px 0px;
 }
 header#intro h1{
 	margin-top: 0px;
 	color:white;
 }
-
 /* About */
 section#about{
 	background-color: #3bb874;
@@ -83,7 +73,6 @@ section#about .sub-section{
 	text-align:justify;
 	font-weight:normal;
 }
-
 .form-control,
 .form-control:focus,
 .form-control:active{
@@ -92,22 +81,18 @@ section#about .sub-section{
 .btn{
 	margin-top:10px;
 }
-
 .form-control{
 	margin-top:10px;
 	border-color:#ddd;
 }
-
 footer{
 	margin-top:50px;
 }
-
 nav.navbar-default{
 	margin-bottom: 0px;
 	background:transparent;
 	border:none;
 }
-
 .navbar-brand{
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -115,14 +100,12 @@ nav.navbar-default{
 	border-bottom:2px solid transparent;
 	text-transform:uppercase;
 }
-
 .navbar-default .navbar-nav a:hover,
 .navbar-default .navbar-nav a:focus{
 	background-color: transparent;
 	color:white;
 	border-bottom:2px solid white;
 }
-
 /* Testimonial */
 section#testimonial .person{
 	padding:5px 40px;
@@ -149,8 +132,6 @@ section#testimonial .person p{
 	font-size: 16px;
 	font-weight: 300;
 }
-
-
 section#specialization ul{
 	padding-left:0px;
 }
@@ -159,7 +140,6 @@ section#specialization .technology{
 	padding:10px 10px;
 	text-align: center;
 }
-
 section#specialization .technology div{
 	background-color:#fff;
 	padding: 20px;
@@ -171,36 +151,29 @@ section#specialization .technology div{
 	border-bottom-right-radius:2px;
 	box-shadow: 0 2px 0 #cecece;
 }
-
 section#specialization .technology div:hover{
 	box-shadow: 0 2px 0 #3bb874;
 }
-
 section#specialization .technology h3{
 	font-size:16px;
 }
-
 section#specialization .technology p{
 	text-align: justify;
 	font-size:14px;
 }
-
 section#contact{
 	background-color:#3bb874;
 	padding:100px 30px;
 }
-
 section#contact h3{
 	font-size: 5.5vw;
 	padding:20px 0px;
 }
-
 section#contact h3 a{
 	color: #4d4f53;
 	border: 8px solid #4d4f53;
 	padding: 20px 30px;
 }
-
 section#contact h3 a:hover{
 	color:white;
 	border-color:white;
@@ -211,7 +184,6 @@ section#achievements{
 section#achievements .row{
 	margin:0px;
 }
-
 section#achievements .achievement{
 	text-align:center;
 }
@@ -219,8 +191,6 @@ section#achievements .achievement h5{
 	font-size: 4vw;
 	color: #3bb874;
 }
-
-
 section#blog-posts{
 	background-color: #4d4f53;
 }
@@ -228,19 +198,16 @@ section#blog-posts h2{
 	color:#f8f8f8;
 	margin-bottom: 20px;
 }
-
 section#blog-posts .post{
 	padding:0px 20px;
 	margin-top:14px;
 }
-
 section#blog-posts .post div{
 	border-bottom: 2px solid #3bb874;
 	border-radius:0px 0px 2px 2px;
 	padding:6px 12px;
 	background-color: #636363;
 }
-
 section#blog-posts .post h3{
 	font-size: 18px;
 	margin-top: 4px;
@@ -249,12 +216,10 @@ section#blog-posts .post h3{
 	text-transform: capitalize;
 	color:#f8f8f8;
 }
-
 section#blog-posts .post p{
 	font-size:14px;
 	color:#eee;
 }
-
 section#blog-posts a.btn-default{
 	border:2px solid #3bb874;
 	background-color: transparent;
@@ -262,7 +227,6 @@ section#blog-posts a.btn-default{
 	font-weight:bold;
 	margin:30px 0px;
 }
-
 section#tagline{
 	padding:100px 0px;
 	background-color: #4d4f53;
@@ -270,22 +234,17 @@ section#tagline{
 section#tagline .row{
 	margin:0px;
 }
-
 section#tagline h3{
 	font-size: 4vw;
 	color:#eee;
 	font-weight: 300;
 }
-
 section#join-us .channel img{
 	padding:80px;
 }
-
-
 section#join-us .channel p.name{
 	text-align:center;
 }
-
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
 		padding:100px;
