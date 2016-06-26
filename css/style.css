@@ -38,7 +38,7 @@ h2.head{
 section#contact,
 section#specialization,
 section#tagline,
-section#testimonial{
+section#testimonial,{
 	margin-top:50px;
 }
 #intro .navbar-brand{
@@ -241,14 +241,61 @@ section#join-us .channel img{
 section#join-us .channel p.name{
 	text-align:center;
 }
+
+#feedback{
+	background-color:#457bc0;
+	padding:50px 0px;
+}
+#feedback h2.head{
+	color:white;
+}
+
+form.gwc-form .btn{
+	background-color:transparent;
+	border:1px solid white;
+	color:white;
+}
+form.gwc-form .btn:hover,
+form.gwc-form .btn:active{
+	color:#ddd;
+}
+
+form.gwc-form input.form-control,
+form.gwc-form textarea.form-control{
+	border:1px solid white;
+	background-color:transparent;
+	color:white;
+}
+form.gwc-form input.form-control:focus,
+form.gwc-form input.form-control:active,
+form.gwc-form textarea.form-control:focus,
+form.gwc-form textarea.form-control:active{
+	border:1px solid white;
+}
+form.gwc-form .form-control::-moz-placeholder {
+	color: #eee;
+	opacity: 1;
+}
+form.gwc-form .form-control:-ms-input-placeholder {
+	color: #eee;
+}
+form.gwc-form .form-control::-webkit-input-placeholder {
+	color: #eee;
+}
+form.gwc-form .form-control::-ms-expand {
+	border: 0;
+	background-color: transparent;
+}
+
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
 		padding:100px;
 	}
 	section#tagline,
 	section#contact,
-	section#achievements{
-		padding:40px 0px;
+	section#achievements,
+	section#feedback{
+		padding:30px 0px;
 	}
 	section#about .sub-section{
 		padding: 30px;
