@@ -49,7 +49,9 @@ h2.head{
 	text-transform:capitalize;
 	margin-bottom: 40px;
 }
-
+section{
+	border-top:1px solid #eee;
+}
 section#contact,
 section#specialization,
 section#tagline,
@@ -158,7 +160,6 @@ nav.navbar-default{
 
 /* Testimonials */
 section#testimonials{
-	background-color:#FDE74C;
 	padding:100px 0px 80px 0px;
 	color:#4D4F53;
 }
@@ -275,14 +276,12 @@ section#blog-posts a.btn-default{
 /* Tagline */
 section#tagline{
 	padding:100px 0px;
-	background-color: #4d4f53;
 }
 section#tagline .row{
 	margin:0px;
 }
 section#tagline h3{
 	font-size: 4vw;
-	color:#eee;
 	font-weight: 300;
 }
 
@@ -296,16 +295,18 @@ section#join-us .channel p.name{
 
 /* Feedback */
 section#feedback{
-	background-color:#457bc0;
 	padding:50px 0px;
 }
 section#feedback h2.head{
-	color:white;
+	color:#4D4F53;
 	margin:10px 0px;
 }
 section#feedback .form-control,
 section#feedback .btn{
+	border-color:#3BB874;
+	color:#3BB874;
 	font-size:18px;
+	background-color:transparent;
 }
 section#feedback input.form-control{
 	height:50px;
@@ -317,47 +318,20 @@ section#feedback .profile-links
 section#feedback .profile-links a img{
 	display:inline;
 }
+section#feedback .form-control::-webkit-input-placeholder,
+section#feedback .form-control:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc;
+}
+section#feedback .form-control::-moz-placeholder,
+section#feedback .form-control:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #ccc;
+  opacity: 1;
+}
+
 
 /* gethelp */
 section#gethelp{
 	padding:20px 0px 60px 0px;
-}
-/* form */
-form.gwc-form .btn{
-	background-color:transparent;
-	border:1px solid white;
-	color:white;
-}
-form.gwc-form .btn:hover,
-form.gwc-form .btn:active{
-	color:#ddd;
-}
-
-form.gwc-form input.form-control,
-form.gwc-form textarea.form-control{
-	border:1px solid white;
-	background-color:transparent;
-	color:white;
-}
-form.gwc-form input.form-control:focus,
-form.gwc-form input.form-control:active,
-form.gwc-form textarea.form-control:focus,
-form.gwc-form textarea.form-control:active{
-	border:1px solid white;
-}
-form.gwc-form .form-control::-moz-placeholder {
-	color: #eee;
-	opacity: 1;
-}
-form.gwc-form .form-control:-ms-input-placeholder {
-	color: #eee;
-}
-form.gwc-form .form-control::-webkit-input-placeholder {
-	color: #eee;
-}
-form.gwc-form .form-control::-ms-expand {
-	border: 0;
-	background-color: transparent;
 }
 
 @media only screen and (max-width : 768px) {
