@@ -53,7 +53,7 @@ h2.head{
 section#contact,
 section#specialization,
 section#tagline,
-section#testimonial,{
+section#testimonials,{
 	margin-top:50px;
 }
 #intro .navbar-brand{
@@ -125,6 +125,10 @@ nav.navbar-default{
 	font-family: 'Ubuntu', sans-serif;
 }
 .navbar-default .navbar-nav a{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	border-bottom:2px solid transparent;
 	text-transform:uppercase;
 }
@@ -149,35 +153,25 @@ nav.navbar-default{
 	background-color:transparent;
 }
 .navbar-default .navbar-toggle:hover{
-background-color:white;
+	background-color:white;
 }
 
-/* Testimonial */
-section#testimonial .person{
-	padding:5px 40px;
+/* Testimonials */
+section#testimonials{
+	background-color:#FDE74C;
+	padding:100px 0px 80px 0px;
+	color:#4D4F53;
 }
-section#testimonial .person > div{
-	border-bottom: 2px solid #3bb874;
-	border-radius:0px 0px 2px 2px;
-	background-color:#fff;
-	padding:10px 20px;
+section#testimonials .controls a{
+	padding: 2px 3px;
+	decoration:none;
 }
-section#testimonial .person .avatar-container{
-	padding:0px 60px;
+.testimonial p.name{
+	font-size:14px;
+	text-align:right;
+	font-style:italic;
 }
-section#testimonial .person img{
-	border-radius:50%;
-	margin:0px auto;
-}
-section#testimonial .person h4{
-	text-align:center;
-	font-weight:400;
-}
-section#testimonial .person p{
-	text-align: justify;
-	font-size: 16px;
-	font-weight: 300;
-}
+
 
 /* Specialization */
 section#specialization ul{
