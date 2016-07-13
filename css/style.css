@@ -314,7 +314,9 @@ section#feedback input.form-control{
 section#feedback textarea.form-control{
 	margin-top:15px;
 }
-section#feedback .profile-links 
+section#feedback .profile-links{
+	margin-top:5px;
+}
 section#feedback .profile-links a img{
 	display:inline;
 }
@@ -327,7 +329,6 @@ section#feedback .form-control:-moz-placeholder { /* Firefox 4 - 18 */
   color: #ccc;
   opacity: 1;
 }
-
 
 /* gethelp */
 section#gethelp{
