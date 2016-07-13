@@ -1,8 +1,17 @@
 .color-ash{
-	color:#4d4f53;
+	color:#4D4F53;
 }
 .color-green{
-	color: #3bb874;
+	color: #3BB874;
+}
+.color-blue{
+	color:#457BC0;
+}
+.color-yellow{
+	color:#FDE74C;
+}
+.color-red{
+	color:#EA2E49;
 }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
 body{
@@ -14,6 +23,11 @@ p{
 section{
 	font-family: 'Ubuntu', sans-serif;
 }
+
+a:hover{
+	text-decoration:none;
+}
+
 .anim{
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
@@ -35,6 +49,7 @@ h2.head{
 	text-transform:capitalize;
 	margin-bottom: 40px;
 }
+
 section#contact,
 section#specialization,
 section#tagline,
@@ -42,7 +57,7 @@ section#testimonial,{
 	margin-top:50px;
 }
 #intro .navbar-brand{
-	color:#3bb874;
+	color:#FFF;
 	font-weight:bold;
 }
 header#intro{
@@ -52,7 +67,7 @@ header#intro{
 	margin-top:0px;
 }
 header#intro .img-container{
-	padding:80px 0px 100px 0px;
+	padding:120px 0px 120px 0px;
 }
 header#intro h1{
 	margin-top: 0px;
@@ -81,6 +96,17 @@ section#about .sub-section{
 .btn{
 	margin-top:10px;
 }
+.btn-green{
+	background-color:transparent;
+	color: #3BB874;	
+	border-color:#3BB874;
+}
+.btn:hover,
+.btn:focus,
+.btn:active{
+	color:#4D4F53;
+	border-color:#4D4F53;
+}
 .form-control{
 	margin-top:10px;
 	border-color:#ddd;
@@ -88,6 +114,8 @@ section#about .sub-section{
 footer{
 	margin-top:50px;
 }
+
+/* Navbar */
 nav.navbar-default{
 	margin-bottom: 0px;
 	background:transparent;
@@ -106,6 +134,22 @@ nav.navbar-default{
 	color:white;
 	border-bottom:2px solid white;
 }
+.navbar-default .navbar-nav > li > a{
+	color:white;
+	font-weight:bold;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:focus{
+	color:#ddd;
+}
+
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus{
+	background-color:transparent;
+}
+
 /* Testimonial */
 section#testimonial .person{
 	padding:5px 40px;
@@ -132,6 +176,8 @@ section#testimonial .person p{
 	font-size: 16px;
 	font-weight: 300;
 }
+
+/* Specialization */
 section#specialization ul{
 	padding-left:0px;
 }
@@ -161,8 +207,9 @@ section#specialization .technology p{
 	text-align: justify;
 	font-size:14px;
 }
+
+/* Contact */
 section#contact{
-	background-color:#3bb874;
 	padding:100px 30px;
 }
 section#contact h3{
@@ -174,6 +221,9 @@ section#contact h3 a{
 	border: 8px solid #4d4f53;
 	padding: 20px 30px;
 }
+
+
+/* Achievements */
 section#achievements{
 	padding:100px 0px;
 }
@@ -187,6 +237,8 @@ section#achievements .achievement h5{
 	font-size: 4vw;
 	color: #3bb874;
 }
+
+/* Blog Posts */
 section#blog-posts{
 	background-color: #4d4f53;
 }
@@ -223,6 +275,8 @@ section#blog-posts a.btn-default{
 	font-weight:bold;
 	margin:30px 0px;
 }
+
+/* Tagline */
 section#tagline{
 	padding:100px 0px;
 	background-color: #4d4f53;
@@ -235,6 +289,8 @@ section#tagline h3{
 	color:#eee;
 	font-weight: 300;
 }
+
+/* Join Us */
 section#join-us .channel img{
 	padding:80px;
 }
@@ -242,14 +298,32 @@ section#join-us .channel p.name{
 	text-align:center;
 }
 
-#feedback{
+/* Feedback */
+section#feedback{
 	background-color:#457bc0;
 	padding:50px 0px;
 }
-#feedback h2.head{
+section#feedback h2.head{
 	color:white;
+	margin:10px 0px;
+}
+section#feedback .form-control,
+section#feedback .btn{
+	font-size:18px;
+}
+section#feedback input.form-control{
+	height:50px;
+}
+section#feedback textarea.form-control{
+	margin-top:15px;
 }
 
+
+/* gethelp */
+section#gethelp{
+	padding:20px 0px 60px 0px;
+}
+/* form */
 form.gwc-form .btn{
 	background-color:transparent;
 	border:1px solid white;
