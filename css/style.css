@@ -313,7 +313,10 @@ section#feedback input.form-control{
 section#feedback textarea.form-control{
 	margin-top:15px;
 }
-
+section#feedback .profile-links 
+section#feedback .profile-links a img{
+	display:inline;
+}
 
 /* gethelp */
 section#gethelp{
