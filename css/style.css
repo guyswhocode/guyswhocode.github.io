@@ -24,7 +24,9 @@ section{
 	font-family: 'Ubuntu', sans-serif;
 }
 
-a:hover{
+a:hover,
+a:active,
+a:visited{
 	text-decoration:none;
 }
 
