@@ -1,17 +1,17 @@
 .color-ash{
-	color:#4D4F53;
+	color:#666666;
 }
 .color-green{
-	color: #3BB874;
+	color: #33BB77;
 }
 .color-blue{
-	color:#457BC0;
+	color:#3399DD;
 }
 .color-yellow{
-	color:#FDE74C;
+	color:#FFF666;
 }
 .color-red{
-	color:#EA2E49;
+	color:#FF6666;
 }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
 body{
@@ -44,7 +44,7 @@ a:visited{
 	background-color: #fff;
 }
 .box:hover{
-	box-shadow: 0 2px 0 #3bb874;
+	box-shadow: 0 2px 0 #33BB77;
 }
 h2.head{
 	font-weight:300;
@@ -66,7 +66,7 @@ section#testimonials,{
 	font-weight:bold;
 }
 header#intro{
-	background:#4d4f53;
+	background:#666666;
 	background-size:cover;
 	background-position: center center;
 	margin-top:0px;
@@ -80,7 +80,7 @@ header#intro h1{
 }
 /* About */
 section#about{
-	background-color: #3bb874;
+	background-color: #33BB77;
 	color:white;
 }
 section#about h1,
@@ -103,14 +103,14 @@ section#about .sub-section{
 }
 .btn-green{
 	background-color:transparent;
-	color: #3BB874;	
-	border-color:#3BB874;
+	color: #33BB77;	
+	border-color:#33BB77;
 }
 .btn:hover,
 .btn:focus,
 .btn:active{
-	color:#4D4F53;
-	border-color:#4D4F53;
+	color:#666666;
+	border-color:#666666;
 }
 .form-control{
 	margin-top:10px;
@@ -141,7 +141,7 @@ nav.navbar-default{
 .navbar-default .navbar-nav a:focus{
 	background-color: transparent;
 	color:white;
-	border-bottom:2px solid white;
+	border-bottom:2px solid #3399DD;
 }
 .navbar-default .navbar-nav > li > a{
 	color:white;
@@ -164,7 +164,7 @@ nav.navbar-default{
 /* Testimonials */
 section#testimonials{
 	padding:100px 0px 80px 0px;
-	color:#4D4F53;
+	color:#666666;
 }
 section#testimonials .controls a{
 	padding: 2px 3px;
@@ -197,8 +197,11 @@ section#specialization .technology div{
 	border-bottom-right-radius:2px;
 	box-shadow: 0 2px 0 #cecece;
 }
-section#specialization .technology div:hover{
-	box-shadow: 0 2px 0 #3bb874;
+section#specialization .technology:nth-child(odd) div:hover{
+	box-shadow: 0 2px 0 #33BB77;
+}
+section#specialization .technology:nth-child(even) div:hover{
+	box-shadow: 0 2px 0 #3399DD;
 }
 section#specialization .technology h3{
 	font-size:16px;
@@ -217,8 +220,8 @@ section#contact h3{
 	padding:20px 0px;
 }
 section#contact h3 a{
-	color: #4d4f53;
-	border: 8px solid #4d4f53;
+	color: #666666;
+	border: 8px solid #666666;
 	padding: 20px 30px;
 }
 
@@ -235,12 +238,12 @@ section#achievements .achievement{
 }
 section#achievements .achievement h5{
 	font-size: 4vw;
-	color: #3bb874;
+	color: #33BB77;
 }
 
 /* Blog Posts */
 section#blog-posts{
-	background-color: #4d4f53;
+	background-color: #666666;
 }
 section#blog-posts h2{
 	color:#f8f8f8;
@@ -251,7 +254,7 @@ section#blog-posts .post{
 	margin-top:14px;
 }
 section#blog-posts .post div{
-	border-bottom: 2px solid #3bb874;
+	border-bottom: 2px solid #33BB77;
 	border-radius:0px 0px 2px 2px;
 	padding:6px 12px;
 	background-color: #636363;
@@ -269,9 +272,9 @@ section#blog-posts .post p{
 	color:#eee;
 }
 section#blog-posts a.btn-default{
-	border:2px solid #3bb874;
+	border:2px solid #33BB77;
 	background-color: transparent;
-	color:#3bb874;
+	color:#33BB77;
 	font-weight:bold;
 	margin:30px 0px;
 }
@@ -301,13 +304,13 @@ section#feedback{
 	padding:50px 0px;
 }
 section#feedback h2.head{
-	color:#4D4F53;
+	color:#666666;
 	margin:10px 0px;
 }
 section#feedback .form-control,
 section#feedback .btn{
-	border-color:#3BB874;
-	color:#3BB874;
+	border-color:#33BB77;
+	color:#33BB77;
 	font-size:18px;
 	background-color:transparent;
 }
