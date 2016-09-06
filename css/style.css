@@ -150,7 +150,7 @@ nav.navbar-default{
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:active,
 .navbar-default .navbar-nav > li > a:focus{
-	color:#ddd;
+	color:#33bb77;
 }
 
 .navbar-default .navbar-toggle:active,
@@ -328,12 +328,12 @@ section#feedback .profile-links a img{
 }
 section#feedback .form-control::-webkit-input-placeholder,
 section#feedback .form-control:-ms-input-placeholder { /* IE 10+ */
-  color: #ccc;
+	color: #ccc;
 }
 section#feedback .form-control::-moz-placeholder,
 section#feedback .form-control:-moz-placeholder { /* Firefox 4 - 18 */
-  color: #ccc;
-  opacity: 1;
+	color: #ccc;
+	opacity: 1;
 }
 
 /* gethelp */
