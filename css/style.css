@@ -168,7 +168,7 @@ section#testimonials{
 }
 section#testimonials .controls a{
 	padding: 2px 3px;
-	decoration:none;
+	text-decoration:none;
 }
 .testimonial p.name{
 	font-size:14px;
