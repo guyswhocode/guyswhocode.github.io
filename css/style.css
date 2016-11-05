@@ -239,6 +239,7 @@ section#achievements .achievement{
 section#achievements .achievement h5{
 	font-size: 4vw;
 	color: #33BB77;
+	font-weight: 300;
 }
 
 /* Blog Posts */
@@ -340,6 +341,7 @@ section#feedback .form-control:-moz-placeholder { /* Firefox 4 - 18 */
 section#gethelp{
 	padding:20px 0px 60px 0px;
 }
+
 
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
