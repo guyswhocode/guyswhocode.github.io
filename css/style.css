@@ -294,6 +294,9 @@ section#join-us .channel p.name{
 /* Feedback */
 section#feedback{
 	padding:50px 0px;
+	background-image: url('../img/feed.jpg');
+	background-size: cover;
+	background-position: bottom;
 }
 section#feedback h2.head{
 	color:#666666;
@@ -313,7 +316,6 @@ section#feedback .btn:focus{
 	border-color:#33BB77;
 	color:#33BB77;
 }
-
 section#feedback input.form-control{
 	height:50px;
 }
@@ -328,6 +330,9 @@ section#feedback .form-control::-moz-placeholder,
 section#feedback .form-control:-moz-placeholder { /* Firefox 4 - 18 */
 	color: #ccc;
 	opacity: 1;
+}
+section#feedback .social-links{
+	padding-bottom: 20px;
 }
 
 /* Mobile CSS */
