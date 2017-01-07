@@ -116,10 +116,37 @@ section#about .sub-section{
 	margin-top:10px;
 	border-color:#ddd;
 }
-footer{
-	margin-top:50px;
-}
 
+footer{
+	padding-top: 50px;
+	margin-top:50px;
+	background-color: #666666;
+	color: #eeeeee;
+}
+footer p{
+	font-size: 14px;
+}
+footer h6{
+	font-size: 16px;
+}
+footer .copyright{
+	font-size: 16px;
+	margin: 0px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+footer ul{
+	list-style: none;
+	padding: 0px;
+}
+footer a{
+	color: #3399BB; 
+}
+footer a:hover,
+footer a:active,
+footer a:focus{
+	color: #ddd; 
+}
 /* Navbar */
 nav.navbar-default{
 	margin-bottom: 0px;
@@ -243,44 +270,6 @@ section#achievements .achievement h5{
 	font-size: 4vw;
 	color: #33BB77;
 	font-weight: 300;
-}
-
-/* Blog Posts */
-section#blog-posts{
-	background-color: #666666;
-}
-section#blog-posts h2{
-	color:#f8f8f8;
-	margin-bottom: 20px;
-}
-section#blog-posts .post{
-	padding:0px 20px;
-	margin-top:14px;
-}
-section#blog-posts .post div{
-	border-bottom: 2px solid #33BB77;
-	border-radius:0px 0px 2px 2px;
-	padding:6px 12px;
-	background-color: #636363;
-}
-section#blog-posts .post h3{
-	font-size: 18px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	font-weight:normal;
-	text-transform: capitalize;
-	color:#f8f8f8;
-}
-section#blog-posts .post p{
-	font-size:14px;
-	color:#eee;
-}
-section#blog-posts a.btn-default{
-	border:2px solid #33BB77;
-	background-color: transparent;
-	color:#33BB77;
-	font-weight:bold;
-	margin:30px 0px;
 }
 
 /* Tagline */
