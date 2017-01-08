@@ -16,6 +16,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
 body{
 	background-color:#f8f8f8;
+	color: #444444;
 }
 p{
 	font-size:18px;
@@ -51,9 +52,6 @@ h2.head{
 	text-align: center;
 	text-transform:capitalize;
 	margin-bottom: 40px;
-}
-section{
-	border-top:1px solid #eee;
 }
 section#contact,
 section#specialization,
@@ -118,9 +116,10 @@ section#about .sub-section{
 }
 
 footer{
-	padding-top: 50px;
+	padding-top: 40px;
 	background-color: #444444;
 	color: #eeeeee;
+	border-top: 1px solid #555;
 }
 footer p{
 	font-size: 14px;
@@ -133,6 +132,7 @@ footer .copyright{
 	margin: 0px;
 	text-align: center;
 	padding-bottom: 10px;
+	padding-top: 20px;
 }
 footer ul{
 	list-style: none;
@@ -146,6 +146,7 @@ footer a:active,
 footer a:focus{
 	color: #ddd; 
 }
+
 /* Navbar */
 nav.navbar-default{
 	margin-bottom: 0px;
@@ -243,35 +244,36 @@ section#specialization .technology p{
 	font-size:14px;
 }
 
-/* Contact */
-section#contact{
-	padding:100px 30px;
-}
-section#contact h3{
-	font-size: 5.5vw;
-	padding:20px 0px;
-}
-section#contact h3 a{
-	color: #666666;
-	border: 8px solid #666666;
-	padding: 20px 30px;
-}
-
-
 /* Achievements */
 section#achievements{
 	padding:100px 0px;
+	background-image: url('../img/feed.jpg');
+	background-position: bottom;
+	background-size: cover;
+	color: #eee;
 }
 section#achievements .row{
 	margin:0px;
+}
+section#achievements .mega-octicon{
+	color: #39d;
 }
 section#achievements .achievement{
 	text-align:center;
 }
 section#achievements .achievement h5{
 	font-size: 4vw;
-	color: #33BB77;
+	color: #eee;
 	font-weight: 300;
+}
+section#achievements h3{
+	font-size: 5.5vw;
+	padding:50px 0px;
+}
+section#achievements h3 a{
+	color: #eee;
+	border: 8px solid #eee;
+	padding: 20px 30px;
 }
 
 /* Tagline */
@@ -297,9 +299,7 @@ section#join-us .channel p.name{
 /* Feedback */
 section#feedback{
 	padding:50px 0px;
-	background-image: url('../img/feed.jpg');
-	background-size: cover;
-	background-position: bottom;
+	background-color: #444;
 }
 section#feedback h2.head{
 	color:#666666;
@@ -308,7 +308,7 @@ section#feedback h2.head{
 section#feedback .form-control,
 section#feedback .btn{
 	font-size:18px;
-	background-color:rgba(0,0,0,0.1);
+	background-color:transparent;
 	border-color: #AAA;
 	border-radius: 4px;
 }
