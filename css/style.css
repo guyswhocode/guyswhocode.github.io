@@ -147,52 +147,12 @@ footer a:focus{
 	color: #ddd; 
 }
 
-/* Navbar */
-nav.navbar-default{
-	margin-bottom: 0px;
-	background:transparent;
-	border:none;
-}
-.navbar-brand{
-	font-family: 'Ubuntu', sans-serif;
-}
-.navbar-default .navbar-nav a{
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-	border-bottom:2px solid transparent;
-	text-transform:uppercase;
-}
-.navbar-default .navbar-nav a:hover,
-.navbar-default .navbar-nav a:focus{
-	background-color: transparent;
-	color:white;
-	border-bottom:2px solid #3399DD;
-}
-.navbar-default .navbar-nav > li > a{
-	color:white;
-	font-weight:bold;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:active,
-.navbar-default .navbar-nav > li > a:focus{
-	color:#33bb77;
-}
-
-.navbar-default .navbar-toggle:active,
-.navbar-default .navbar-toggle:focus{
-	background-color:transparent;
-}
-.navbar-default .navbar-toggle:hover{
-	background-color:white;
-}
-
 /* Testimonials */
 section#testimonials{
 	background-color: #444444;
 	padding:100px 0px 80px 0px;
 	color:#eee;
+	border-bottom: 1px solid #555;
 }
 section#testimonials .controls a{
 	padding: 2px 3px;
@@ -211,6 +171,9 @@ section#testimonials .testimonial p.name{
 }
 
 /* Specialization */
+section#specialization{
+	padding-bottom: 30px;
+}
 section#specialization ul{
 	padding-left:0px;
 }
@@ -340,6 +303,33 @@ section#feedback .form-control:-moz-placeholder { /* Firefox 4 - 18 */
 section#feedback .social-links{
 	padding-bottom: 20px;
 }
+
+/* Recent Projects */
+section#recent-projects{
+	padding:50px 0px; 
+	background-color: #39d;
+	color: #444;
+}
+section#recent-projects .project{
+	padding: 10px;
+}
+section#recent-projects .project > div,
+section#recent-projects .project img{
+	border-radius: 2px;
+}
+section#recent-projects .project > div{
+	background-color: white;
+	padding-bottom: 10px; 
+}
+section#recent-projects a.name{
+	color: #444;
+	font-size: 16px;
+	padding:10px;
+}
+section#recent-projects .project img{
+	width: 100%;
+}
+
 
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {
