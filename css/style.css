@@ -66,7 +66,7 @@ section#testimonials,{
 	font-weight:bold;
 }
 header#intro{
-	background:#666666;
+	background:#444444;
 	background-size:cover;
 	background-position: center center;
 	margin-top:0px;
@@ -189,7 +189,7 @@ nav.navbar-default{
 
 /* Testimonials */
 section#testimonials{
-	background-color: #666666;
+	background-color: #444444;
 	padding:100px 0px 80px 0px;
 	color:#eee;
 }
@@ -199,6 +199,9 @@ section#testimonials .controls a{
 }
 section#testimonials #feedback-icon{
 	padding: 0px 50px;
+}
+section#testimonials .testimonial p.words{
+	text-align: justify;
 }
 section#testimonials .testimonial p.name{
 	font-size:14px;
