@@ -211,6 +211,8 @@ section#specialization .technology p{
 section#achievements{
 	padding:100px 0px;
 	background-image: url('../img/feed.jpg');
+	background-color: #444;
+	background-blend-mode: multiply;
 	background-position: bottom;
 	background-size: cover;
 	color: #eee;
