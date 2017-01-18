@@ -10,7 +10,7 @@ nav.navbar-default{
 }
 .navbar-default .navbar-nav a{
 	text-transform:uppercase;
-	border-bottom:2px solid transparent;
+	border-bottom:2px solid #444;
 }
 .navbar-default .navbar-nav a:hover,
 .navbar-default .navbar-nav a:focus{
