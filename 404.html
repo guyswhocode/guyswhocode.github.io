@@ -1,11 +1,24 @@
 ---
+title: Page not found
 ---
 <!DOCTYPE html>
 <html>
 {% include head.html %}
 <body>
-	<header>
-		{% include nav.html %}
-	</header>
+
+<!-- Header -->
+<header id="error404">
+	{% include nav.html %}
+	<div class="container">
+		<div class="dialog">
+			<h1>404</h1>
+			<h2>Are you sure about this place ?</h2>
+		</div>
+	</div>
+</header>
+
+
+<!-- footer -->
+{% include footer.html %}
 </body>
 </html>
