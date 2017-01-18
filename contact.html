@@ -5,7 +5,7 @@ permalink: /contact
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body>
+<body class="error404">
 
 <!-- Header -->
 <header id="intro">
@@ -19,12 +19,12 @@ permalink: /contact
         <div class="row">
             <div class="col-sm-offset-4 col-sm-4">
                 <div class="row profile-links">
-                    <a class="col-xs-2" target="_blank" href="http://github.com/guyswhocode"><img src="assets/img/social/github.svg" alt="Github" class="img img-responsive"></a>
-                    <a class="col-xs-2" target="_blank" href="http://facebook.com/guyswhocode"><img src="assets/img/social/facebook.svg" alt="Facebook" class="img img-responsive"></a>
-                    <a class="col-xs-2" target="_blank" href="http://instagram.com/guyswhocode"><img src="assets/img/social/instagram.svg" alt="Instagram" class="img img-responsive"></a>
-                    <a class="col-xs-2" target="_blank" href="http://twitter.com/guyswhoc0de"><img src="assets/img/social/twitter.svg" alt="Twitter" class="img img-responsive"></a>
-                    <a class="col-xs-2" target="_blank" href="http://google.com/plus"><img src="assets/img/social/google-plus.svg" alt="Google+" class="img img-responsive"></a>
-                    <a class="col-xs-2" target="_blank" href="http://pinterest.com/guyswhocode"><img src="assets/img/social/pinterest.svg" alt="Pinterest" class="img img-responsive"></a>
+                    <a class="col-xs-2" target="_blank" href="{{ site.social.github }}"><img src="assets/img/social/github.svg" alt="Github" class="img img-responsive"></a>
+                    <a class="col-xs-2" target="_blank" href="{{ site.social.facebook }}"><img src="assets/img/social/facebook.svg" alt="Facebook" class="img img-responsive"></a>
+                    <a class="col-xs-2" target="_blank" href="{{ site.social.instagram }}"><img src="assets/img/social/instagram.svg" alt="Instagram" class="img img-responsive"></a>
+                    <a class="col-xs-2" target="_blank" href="{{ site.social.twitter }}"><img src="assets/img/social/twitter.svg" alt="Twitter" class="img img-responsive"></a>
+                    <a class="col-xs-2" target="_blank" href="{{ site.social.gplus }}"><img src="assets/img/social/google-plus.svg" alt="Google+" class="img img-responsive"></a>
+                    <a class="col-xs-2" target="_blank" href="{{ site.social.pinterest }}"><img src="assets/img/social/pinterest.svg" alt="Pinterest" class="img img-responsive"></a>
                 </div>
             </div>
         </div>    
@@ -56,9 +56,5 @@ permalink: /contact
 
 <!-- Footer -->
 {% include footer.html %}
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

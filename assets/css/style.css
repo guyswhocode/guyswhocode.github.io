@@ -59,23 +59,34 @@ section#tagline,
 section#testimonials,{
 	margin-top:50px;
 }
-#intro .navbar-brand{
-	color:#FFF;
+#main-navigation .navbar-brand{
+	color:#fff;
 	font-weight:bold;
 }
-header#intro{
+#intro{
 	background:#444444;
-	background-size:cover;
-	background-position: center center;
 	margin-top:0px;
 }
-header#intro .img-container{
+#intro .img-container{
 	padding:120px 0px 120px 0px;
 }
-header#intro h1{
+#intro h1{
 	margin-top: 0px;
 	color:white;
 }
+
+/* 404 */
+#error404{
+	background-color: #444;
+}
+#error404 .dialog{
+	padding:120px 0px 160px 0px;
+	color: #ff6666;
+}
+#error404 h1{
+	font-size: 84px;
+}
+
 /* About */
 section#about{
 	background-color: #33BB77;
