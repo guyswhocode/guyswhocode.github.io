@@ -343,6 +343,22 @@ section#recent-projects .project img{
 	width: 100%;
 }
 
+/* Pages */
+/* /about */
+section#about-page-intro{
+	padding:100px 0px;
+	text-align: center;
+	background-image: url('/assets/img/pages/programmer-laptop.jpg');
+	background-color: #666; 
+	background-blend-mode: multiply;
+	background-position: bottom center;
+	background-size: cover;
+	color: white;
+}
+section#about-page-intro p{
+	padding: 0px 200px;
+	text-align: justify-all;
+}
 
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {
@@ -364,5 +380,8 @@ section#recent-projects .project img{
 	section#testimonials img#feedback-icon{
 		height: 100px;
 		margin: 0px auto;
+	}
+	section#about-page-intro p{
+		padding: 0px;
 	}
 }
