@@ -402,6 +402,69 @@ section#lab-page-experiments .exp-detail p{
 	margin-top: 10px;
 }
 
+/* /team */
+#team-page{
+	margin:20px 0px;  
+}
+#team-page .member div{
+	background-color: #444;
+	color: white;
+}
+#team-page .member .details{
+	padding: 10px 0px;
+}
+#team-page .member:nth-child(odd) > div:hover .details{
+	color: #3B7;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+#team-page .member:nth-child(even) > div:hover .details{
+	color: #39D;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+#team-page .member > div{
+	text-align: center;
+	margin-top: 15px;
+}
+#team-page .member .name{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+#team-page .member .pos{
+	font-size: 16px;
+	font-weight: 200;
+}
+#team-page .member img{
+	width: 100%;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+#team-page .member > div:hover img{
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+section#team-page-intro{
+	padding:100px 0px;
+	text-align: center;
+	background-image: url('/assets/img/pages/gwc-team.jpg');
+	background-color: #666; 
+	background-blend-mode: multiply;
+	background-position: bottom center;
+	background-size: cover;
+	color: white;
+} 
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
