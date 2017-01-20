@@ -4,52 +4,37 @@ permalink: /lab
 tags: lab
 layout: page
 ---
+
 <section id="lab-page-experiments">
-	<div class="row">
-		<div class="col-sm-3 exp-img">
-			<img src="/assets/img/projects/nalette-logo.jpg" alt="">
-		</div>
-		<div class="col-sm-3 exp-detail">
-			<div>
-				<h2>Nalettes</h2>
-				<p>A open repository of color palettes picked up carefully, inspired from nature. Feel free to use any of these color palettes in your next big project.</p>
-				<a href="/nalettes" target="_blank" class="visit">Visit</a>
-			</div>
-		</div>
-		
-		<div class="col-sm-3 exp-img">
-			<img src="/assets/img/projects/nalette-logo.jpg" alt="">
-		</div>
-		<div class="col-sm-3 exp-detail">
-			<div>
-				<h2>Sparkle</h2>
-				<p>Useful and genuine resources for developers by developers. Bookmarks that will help you find programming related materials easily. Be up-to-date with bleeding edge technologies.</p>
-				<a href="/sparkle" target="_blank" class="visit">Visit</a>
-			</div>
+	{% for post in site.categories.experiments %}
+	{% assign mod2 = forloop.index | modulo: 2 %}
+	{% assign mod3 = forloop.index | modulo: 3 %}
+	{% assign mod4 = forloop.index | modulo: 4 %}
+	{% if mod2 != 0 or forloop.index == 1 %}<div class="row">{% endif %}
+	<!-- {{ forloop.index }}  -->
+	{% if mod3 == 0 or mod4 == 0 %}
+	<div class="col-sm-3 exp-img">
+		<img src="/assets/img/projects/nalette-logo.jpg" alt="{{ post.title }} logo">
+	</div>
+	<div class="col-sm-3 exp-detail">
+		<div>
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.description }}</p>
+			<a href="{{ post.url }}" target="_blank" class="visit">Visit</a>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-3 exp-detail">
-			<div>
-				<h2>Sanz</h2>
-				<p>Minimalist Jekyll blogging template.
-					<br />Fork, Config &amp Push. Easy as that !</p>
-					<a href="/sanz" target="_blank" class="visit">Visit</a>
-				</div>
-			</div>
-			<div class="col-sm-3 exp-img">
-				<img src="/assets/img/projects/nalette-logo.jpg" alt="">
-			</div>
-
-			<div class="col-sm-3 exp-detail">
-				<div>
-					<h2>Thulasi</h2>
-					<p>Flat responsive Jekyll template for your next blog. Built carefully using flat design principles with elegant User Interface.</p>
-					<a href="/thulsi" target="_blank" class="visit">Visit</a>
-				</div>
-			</div>
-			<div class="col-sm-3 exp-img">
-				<img src="/assets/img/projects/nalette-logo.jpg" alt="">
-			</div>
+	{% else %}
+	<div class="col-sm-3 exp-detail">
+		<div>
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.description }}</p>
+			<a href="{{ post.url }}" target="_blank" class="visit">Visit</a>
 		</div>
-	</section>
+	</div>
+	<div class="col-sm-3 exp-img">
+		<img src="/assets/img/projects/nalette-logo.jpg" alt="{{ post.title }} logo">
+	</div>
+	{% endif %}
+	{% if mod2 == 0  %}</div>{% endif %}
+	{% endfor %}
+</section>

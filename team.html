@@ -19,78 +19,17 @@ layout: page
 <section id="team-page">
 	<div class="container">
 		<div class="row">
+			{% for post in site.categories.team %}
 			<div class="col-sm-3 member">
 				<div>
-					<img src="/assets/img/team/shajan-jacob.jpg" alt="">
+					<img src="/assets/img/team/{{ post.avatar }}" alt="">
 					<div class="details">
-						<p class="name">Shajan Jacob</p>
-						<p class="pos">Full-Stack Developer</p>
+						<p class="name">{{ post.name }}</p>
+						<p class="pos">{{ post.designation }}</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/akash-manoj.jpg" alt="">
-					<div class="details">
-						<p class="name">Akash Manoj</p>
-						<p class="pos">Back-End Developer</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/jay-shankar.jpg" alt="">
-					<div class="details">
-						<p class="name">Jay Shankar</p>
-						<p class="pos">Front-End Designer</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/qubin-jose.jpg" alt="">
-					<div class="details">
-						<p class="name">Qubin Jose</p>
-						<p class="pos">Database Engineer</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/vishal-shaji-philip.jpg" alt="">
-					<div class="details">
-						<p class="name">Vishal Shaji</p>
-						<p class="pos">UI Designer</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/albin-peter.jpg" alt="">
-					<div class="details">
-						<p class="name">Albin Peter</p>
-						<p class="pos">Marketing Manager</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/ajith-jacob.jpg" alt="">
-					<div class="details">
-						<p class="name">Ajith Jacob</p>
-						<p class="pos">Business Analyst</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 member">
-				<div>
-					<img src="/assets/img/team/shanu-thankan.jpg" alt="">
-					<div class="details">
-						<p class="name">Shanu Thankan</p>
-						<p class="pos">SEO Specialist</p>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
