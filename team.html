@@ -1,0 +1,35 @@
+---
+title: Team
+permalink: /team
+tags: team,members,group
+layout: page
+---
+<section id="team-page-intro">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Our Awesome Team</h1>
+				<p>Our small team is blessed with people who are passionate about what they do. </p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Members -->
+<section id="team-page">
+	<div class="container">
+		<div class="row">
+			{% for post in site.categories.team %}
+			<div class="col-sm-3 member">
+				<div>
+					<img src="/assets/img/team/{{ post.avatar }}" alt="">
+					<div class="details">
+						<p class="name">{{ post.name }}</p>
+						<p class="pos">{{ post.designation }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

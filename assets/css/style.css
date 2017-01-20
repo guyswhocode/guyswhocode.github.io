@@ -47,6 +47,13 @@ a:visited{
 .box:hover{
 	box-shadow: 0 2px 0 #33BB77;
 }
+a.visit{
+	padding: 6px 10px;
+	color: #fff;
+	border: 1px solid white;
+	border-radius: 4px;
+}
+
 h2.head{
 	font-weight:300;
 	text-align: center;
@@ -59,23 +66,34 @@ section#tagline,
 section#testimonials,{
 	margin-top:50px;
 }
-#intro .navbar-brand{
-	color:#FFF;
+#main-navigation .navbar-brand{
+	color:#fff;
 	font-weight:bold;
 }
-header#intro{
+#intro{
 	background:#444444;
-	background-size:cover;
-	background-position: center center;
 	margin-top:0px;
 }
-header#intro .img-container{
+#intro .img-container{
 	padding:120px 0px 120px 0px;
 }
-header#intro h1{
+#intro h1{
 	margin-top: 0px;
 	color:white;
 }
+
+/* 404 */
+#error404{
+	background-color: #444;
+}
+#error404 .dialog{
+	padding:120px 0px 160px 0px;
+	color: #ff6666;
+}
+#error404 h1{
+	font-size: 84px;
+}
+
 /* About */
 section#about{
 	background-color: #33BB77;
@@ -310,7 +328,7 @@ section#feedback .social-links{
 section#recent-projects{
 	padding:50px 0px; 
 	background-color: #39d;
-	color: #444;
+	color: #fff;
 }
 section#recent-projects .project{
 	padding: 10px;
@@ -332,7 +350,121 @@ section#recent-projects .project img{
 	width: 100%;
 }
 
+/* Pages */
+/* /about */
+section#about-page-intro{
+	padding:100px 0px;
+	text-align: center;
+	background-image: url('/assets/img/pages/programmer-laptop.jpg');
+	background-color: #666; 
+	background-blend-mode: multiply;
+	background-position: bottom center;
+	background-size: cover;
+	color: white;
+}
+section#about-page-intro p{
+	padding: 0px 200px;
+	text-align: justify-all;
+}
 
+/* /lab */
+section#lab-page-experiments .row{
+	margin: 0px;
+	background-color: #3B7;
+}
+section#lab-page-experiments .row:nth-child(even){
+	background-color: #39B;
+}
+section#lab-page-experiments .exp-img{
+	padding: 0px;
+}
+section#lab-page-experiments .exp-img img{
+	background-color: #fff;
+	padding: 20px;
+	width: 100%;
+}
+section#lab-page-experiments .exp-detail{
+	padding: 0px;
+	color: #fff;
+}
+section#lab-page-experiments .exp-detail div{
+	padding: 40px;
+	position: relative;
+	height: 100%;
+}
+section#lab-page-experiments .exp-detail h2{
+	margin: 0px; 
+	font-size: 20px;
+	text-transform: uppercase;
+}
+section#lab-page-experiments .exp-detail p{
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+/* /team */
+#team-page{
+	margin:20px 0px;  
+}
+#team-page .member div{
+	background-color: #444;
+	color: white;
+}
+#team-page .member .details{
+	padding: 10px 0px;
+}
+#team-page .member:nth-child(odd) > div:hover .details{
+	color: #3B7;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+#team-page .member:nth-child(even) > div:hover .details{
+	color: #39D;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+#team-page .member > div{
+	text-align: center;
+	margin-top: 15px;
+}
+#team-page .member .name{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+#team-page .member .pos{
+	font-size: 16px;
+	font-weight: 200;
+}
+#team-page .member img{
+	width: 100%;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+#team-page .member > div:hover img{
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+section#team-page-intro{
+	padding:100px 0px;
+	text-align: center;
+	background-image: url('/assets/img/pages/gwc-team.jpg');
+	background-color: #666; 
+	background-blend-mode: multiply;
+	background-position: bottom center;
+	background-size: cover;
+	color: white;
+} 
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
@@ -353,5 +485,8 @@ section#recent-projects .project img{
 	section#testimonials img#feedback-icon{
 		height: 100px;
 		margin: 0px auto;
+	}
+	section#about-page-intro p{
+		padding: 0px;
 	}
 }

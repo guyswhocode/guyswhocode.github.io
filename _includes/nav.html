@@ -1,0 +1,30 @@
+<div class="container">
+    <nav id="main-navigation" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" title="Guys Who Code">{{ site.name }}</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/about" title="About" class="{% if page.url == '/about' %}active{% endif %}">About</a></li>
+                    <li><a href="/blog" title="Blog" class="{% if page.url == '/blog' %}active{% endif %}">Blog</a></li>
+                    <li><a href="/lab" title="Lab" class="{% if page.url == '/lab' %}active{% endif %}">Lab</a></li>
+                    <li><a href="/products" title="Products" class="{% if page.url == '/products' %}active{% endif %}">Products</a></li>
+                    <li><a href="/team" class="{% if page.url == '/team' %}active{% endif %}">Team</a></li>
+                    <li><a href="/careers" class="{% if page.url == '/careers' %}active{% endif %}">Careers</a></li> 
+                    <li><a href="/contact" class="{% if page.url == '/contact' %}active{% endif %}">Contact</a></li>
+                    <li><a href="/join" class="{% if page.url == '/join' %}active{% endif %}">Join Us</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+</div>
