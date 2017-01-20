@@ -360,6 +360,47 @@ section#about-page-intro p{
 	text-align: justify-all;
 }
 
+/* /lab */
+section#lab-page-experiments .row{
+	margin: 0px;
+	background-color: #3B7;
+}
+section#lab-page-experiments .row:nth-child(even){
+	background-color: #39B;
+}
+section#lab-page-experiments .exp-img{
+	padding: 0px;
+}
+section#lab-page-experiments .exp-img img{
+	background-color: #fff;
+	padding: 20px;
+	width: 100%;
+}
+section#lab-page-experiments .exp-detail{
+	padding: 0px;
+	color: #fff;
+}
+section#lab-page-experiments .exp-detail div{
+	padding: 40px;
+	position: relative;
+	height: 100%;
+}
+section#lab-page-experiments .exp-detail a.read-more{
+	padding: 6px 10px;
+	color: #fff;
+	border: 1px solid white;
+	border-radius: 4px;
+}
+section#lab-page-experiments .exp-detail h2{
+	margin: 0px; 
+	font-size: 20px;
+	text-transform: uppercase;
+}
+section#lab-page-experiments .exp-detail p{
+	font-size: 16px;
+	margin-top: 10px;
+}
+
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
