@@ -14,14 +14,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="/about" title="About">About</a></li>
-                    <li><a class="page-scroll" href="/blog" title="Blog">Blog</a></li>
-                    <li><a href="/lab" title="Lab">Lab</a></li>
-                    <li><a href="/products" title="Products">Products</a></li>
-                    <li><a href="/team">Team</a></li>
-                    <li><a href="/careers">Careers</a></li> 
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/join">Join Us</a></li>
+                    <li><a class="page-scroll" href="/about" title="About" class="{% if page.url == '/about' %}active{% endif %}">About</a></li>
+                    <li><a class="page-scroll" href="/blog" title="Blog" class="{% if page.url == '/blog' %}active{% endif %}">Blog</a></li>
+                    <li><a href="/lab" title="Lab" class="{% if page.url == '/lab' %}active{% endif %}">Lab</a></li>
+                    <li><a href="/products" title="Products" class="{% if page.url == '/products' %}active{% endif %}">Products</a></li>
+                    <li><a href="/team" class="{% if page.url == '/team' %}active{% endif %}">Team</a></li>
+                    <li><a href="/careers" class="{% if page.url == '/careers' %}active{% endif %}">Careers</a></li> 
+                    <li><a href="/contact" class="{% if page.url == '/contact' %}active{% endif %}">Contact</a></li>
+                    <li><a href="/join" class="{% if page.url == '/join' %}active{% endif %}">Join Us</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
