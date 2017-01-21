@@ -1,0 +1,41 @@
+
+/* Navbar */
+nav.navbar-default{
+	margin-bottom: 0px;
+	background:transparent;
+	border:none;
+}
+.navbar-brand{
+	font-family: 'Ubuntu', sans-serif;
+}
+.navbar-default .navbar-nav a{
+	text-transform:uppercase;
+	border-bottom:2px solid transparent;
+}
+.navbar-default .navbar-nav a:hover,
+.navbar-default .navbar-nav a:focus{
+	background-color: transparent;
+	color:white;
+	border-bottom:2px solid #3399DD;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.navbar-default .navbar-nav > li > a{
+	color:white;
+	font-weight:bold;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:focus{
+	color:#33bb77;
+}
+
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:focus{
+	background-color:transparent;
+}
+.navbar-default .navbar-toggle:hover{
+	background-color:white;
+}
