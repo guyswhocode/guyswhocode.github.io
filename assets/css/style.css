@@ -388,17 +388,17 @@ section#lab-page-experiments .exp-detail{
 	color: #fff;
 }
 section#lab-page-experiments .exp-detail div{
-	padding: 40px;
+	padding: 20px;
 	position: relative;
 	height: 100%;
 }
 section#lab-page-experiments .exp-detail h2{
 	margin: 0px; 
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: uppercase;
 }
 section#lab-page-experiments .exp-detail p{
-	font-size: 16px;
+	font-size: 14px;
 	margin-top: 10px;
 }
 

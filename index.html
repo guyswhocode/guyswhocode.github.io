@@ -123,7 +123,7 @@
 <section id="recent-projects">
     <div class="container">
         <div class="row">
-        {% for post in site.categories.experiments %}
+        {% for post in site.categories.experiments | limit: 4 %}
             <div class="col-sm-2 project">
                 <div>
                     <img src="assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo">
