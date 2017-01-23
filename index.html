@@ -124,14 +124,14 @@
     <div class="container">
         <div class="row">
         {% for post in site.categories.experiments | limit: 4 %}
-            <div class="col-sm-2 project">
+            <div class="col-xs-6 col-sm-2 project">
                 <div>
                     <img src="assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo">
                     <a class="name" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                 </div>
             </div>
         {% endfor %}
-            <div class="col-sm-4">
+            <div class="col-xs-12 col-sm-4">
                 <div class="div">
                     <h2>Yours could be next!</h2>
                     <p>Have a unique, creative idea? We'll help you make it real.</p>
