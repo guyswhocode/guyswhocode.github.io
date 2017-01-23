@@ -1,6 +1,28 @@
 ---
 title: Careers
 permalink: /careers
-tags: job,careers,work
+tags: job,careers,work,openings,opertunities
 layout: page
 ---
+
+<section id="careers-page-openings">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+
+			</div>
+			<div class="col-sm-6">
+				<div class="row">					
+					{% for opening in site.categories.careers %}
+					<div class="col-sm-12 opening">
+						<div>
+							<h2>{{ opening.title }}</h2>
+							<p>{{ opening.content }}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+	</div>
+</section>
