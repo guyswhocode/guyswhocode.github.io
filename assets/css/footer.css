@@ -1,0 +1,31 @@
+footer{
+	padding-top: 40px;
+	background-color: #444444;
+	color: #eeeeee;
+	border-top: 1px solid #555;
+}
+footer p{
+	font-size: 14px;
+}
+footer h6{
+	font-size: 16px;
+}
+footer .copyright{
+	font-size: 16px;
+	margin: 0px;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+footer ul{
+	list-style: none;
+	padding: 0px;
+}
+footer a{
+	color: #3399BB; 
+}
+footer a:hover,
+footer a:active,
+footer a:focus{
+	color: #ddd; 
+}
