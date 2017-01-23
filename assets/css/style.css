@@ -401,6 +401,10 @@ section#lab-page-experiments .exp-detail p{
 	font-size: 14px;
 	margin-top: 10px;
 }
+section#lab-page-experiments .exp-detail a.visit{
+	font-size: 12px;
+	padding: 4px 6px;
+}
 
 /* /team */
 #team-page{
@@ -465,6 +469,32 @@ section#team-page-intro{
 	background-size: cover;
 	color: white;
 } 
+
+section#careers-page-openings{
+	background: #eee;
+	padding: 10px 0px;
+}
+section#careers-page-openings .opening{
+	margin-top:10px;
+}
+section#careers-page-openings .opening > div{
+	padding: 10px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 4px 6px -6px #444;
+	-moz-box-shadow: 0 4px 6px -6px #444;
+	box-shadow: 0 4px 6px -6px #444;
+}
+section#careers-page-openings .opening h2{
+	color: #39D;
+	margin-top: 0px;
+	font-size: 22px;
+}
+section#careers-page-openings .opening p{
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+
+
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {
 	header#intro .img-container{
