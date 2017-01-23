@@ -1,7 +1,7 @@
 ---
 layout: employee
-name: "Albin Peter"
+name: "Peter Devasia"
 designation: "Marketing Manager"
-avatar: albin-peter.jpg
+avatar: peter-devasia.jpg
 categories: team
 ---
