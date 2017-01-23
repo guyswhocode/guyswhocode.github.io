@@ -53,7 +53,22 @@ a.visit{
 	border: 1px solid white;
 	border-radius: 4px;
 }
-
+img.blurgrey{
+	-webkit-filter: grayscale(100%) blur(1px);
+	filter: grayscale(100%) blur(1px);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+img.blurgrey:hover{
+	-webkit-filter: grayscale(0%) blur(0px);
+	filter: grayscale(0%) blur(0px);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
 h2.head{
 	font-weight:300;
 	text-align: center;
@@ -355,7 +370,7 @@ section#recent-projects .project img{
 section#about-page-intro{
 	padding:100px 0px;
 	text-align: center;
-	background-image: url('/assets/img/pages/programmer-laptop.jpg');
+	background-image: url('../img/pages/programmer-laptop.jpg');
 	background-color: #666; 
 	background-blend-mode: multiply;
 	background-position: bottom center;
@@ -462,7 +477,7 @@ section#lab-page-experiments .exp-detail a.visit{
 section#team-page-intro{
 	padding:100px 0px;
 	text-align: center;
-	background-image: url('/assets/img/pages/gwc-team.jpg');
+	background-image: url('../img/pages/gwc-team.jpg');
 	background-color: #666; 
 	background-blend-mode: multiply;
 	background-position: bottom center;
@@ -471,7 +486,7 @@ section#team-page-intro{
 } 
 
 section#careers-page-openings{
-	background: #eee;
+	background: #f5f9fc;
 	padding: 10px 0px;
 }
 section#careers-page-openings .opening{
