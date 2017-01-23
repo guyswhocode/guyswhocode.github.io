@@ -19,23 +19,23 @@ layout: page
 			<div>
 				<h2>{{ post.title }}</h2>
 				<p>{{ post.description }}</p>
-				<a href="{{ post.url }}" target="_blank" class="visit">Visit</a>
+				<a href="{{ post.url }}" title="{{ post.title }}" target="_blank" class="visit">Visit</a>
 			</div>
 		</div>
 		<div class="col-sm-2 exp-img">
-			<img src="/assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo">
+			<img src="/assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo" title="{{ post.title }} logo">
 		</div>
 	</div><!-- experiment -->
 	{% else %}
 	<div class="experiment">
 		<div class="col-sm-2 exp-img">
-			<img src="/assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo">
+			<img src="/assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo" title="{{ post.title }} logo">
 		</div>
 		<div class="col-sm-2 exp-detail">
 			<div>
 				<h2>{{ post.title }}</h2>
 				<p>{{ post.description }}</p>
-				<a href="{{ post.url }}" target="_blank" class="visit">Visit</a>
+				<a href="{{ post.url }}" title="{{ post.title }}" target="_blank" class="visit">Visit</a>
 			</div>
 		</div>
 	</div><!-- experiment -->
