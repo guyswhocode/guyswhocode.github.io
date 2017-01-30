@@ -8,21 +8,14 @@ layout: page
 <section id="careers-page-openings">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6">
-				<img src="assets/img/pages/gwc-careers.jpg" alt="" class="img img-responsive blurgrey">
+			{% for opening in site.categories.careers %}
+			<div class="col-sm-12 opening">
+				<div>
+					<h2><a href="">{{ opening.title }}</a></h2>
+					<p>{{ opening.excerpt }}</p>
+				</div>
 			</div>
-			<div class="col-sm-6">
-				<div class="row">					
-					{% for opening in site.categories.careers %}
-					<div class="col-sm-12 opening">
-						<div>
-							<h2>{{ opening.title }}</h2>
-							<p>{{ opening.content }}</p>
-						</div>
-					</div>
-					{% endfor %}
-				</div>	
-			</div>
-		</div>
+			{% endfor %}
+		</div>	
 	</div>
 </section>
