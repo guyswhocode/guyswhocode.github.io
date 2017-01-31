@@ -11,6 +11,24 @@ section#testimonials,{
 	margin-top:50px;
 }
 
+header.page{
+	padding:100px 0px;
+	text-align: center;
+	background-color: #888; 
+	background-blend-mode: multiply;
+	background-position: bottom center;
+	background-size: cover;
+	color: white;
+}
+header.page h1{
+	font-weight: 300;
+}
+header.page p{
+	padding: 0px 200px;
+	text-align: justify-all;
+
+}
+
 #intro{
 	background:#444444;
 	margin-top:0px;
@@ -68,8 +86,7 @@ section#your-project h2{
 	line-height: 1.6;
 }
 section#your-project h2 strong{
-	font-style: italic;
-	color: #33BB77;
+	color: #39D;
 	font-weight: 300;
 }
 section#your-project a.visit{
@@ -246,24 +263,6 @@ section#recent-projects .project img{
 }
 
 /* Pages */
-/* /about */
-section#about-page-intro{
-	padding:100px 0px;
-	text-align: center;
-	background-image: url('../img/pages/programmer-laptop.jpg');
-	background-color: #666; 
-	background-blend-mode: multiply;
-	background-position: bottom center;
-	background-size: cover;
-	color: white;
-}
-section#about-page-intro h1{
-	font-weight: 300;
-}
-section#about-page-intro p{
-	padding: 0px 200px;
-	text-align: justify-all;
-}
 
 /* /lab */
 section#lab-page-experiments .row{
@@ -357,19 +356,6 @@ section#lab-page-experiments .exp-detail a.visit{
 	transition: all 0.5s ease-in-out;
 }
 
-section#team-page-intro{
-	padding:100px 0px;
-	text-align: center;
-	background-image: url('../img/pages/gwc-team.jpg');
-	background-color: #666; 
-	background-blend-mode: multiply;
-	background-position: bottom center;
-	background-size: cover;
-	color: white;
-} 
-section#team-page-intro h1{
-	font-weight: 300;
-}
 section#careers-page-openings{
 	background: #f5f9fc;
 	padding: 10px 0px;
