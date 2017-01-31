@@ -24,9 +24,7 @@ header.page h1{
 	font-weight: 300;
 }
 header.page p{
-	padding: 0px 200px;
 	text-align: justify-all;
-
 }
 
 #intro{
@@ -361,25 +359,32 @@ section#careers-page-openings{
 	padding: 10px 0px;
 }
 section#careers-page-openings .opening{
-	margin-top:10px;
-	color: white;
+	margin-top:15px;
+	color: #666;
 }
 section#careers-page-openings .opening > div{
-	border-radius: 2px;
-	padding: 10px;
-	background-color: #3b7;
+	position: relative;
+	padding-bottom: 34px;
 }
 section#careers-page-openings .opening h2{
-	color: white;
 	margin-top: 0px;
 	font-size: 22px;
 }
 section#careers-page-openings .opening h2 a{
-	color: #fff;
+	color: #666;
 }
 section#careers-page-openings .opening p{
 	font-size: 16px;
 	margin-bottom: 0px;
+}
+section#careers-page-openings .opening a.apply{
+	padding: 6px 8px;
+	border: 1px solid #888;
+	border-radius: 2px;
+	color: #666;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
 }
 
 
