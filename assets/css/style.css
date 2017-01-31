@@ -364,7 +364,7 @@ section#careers-page-openings .opening{
 }
 section#careers-page-openings .opening > div{
 	position: relative;
-	padding-bottom: 34px;
+	padding-bottom: 30px;
 }
 section#careers-page-openings .opening h2{
 	margin-top: 0px;
@@ -378,13 +378,13 @@ section#careers-page-openings .opening p{
 	margin-bottom: 0px;
 }
 section#careers-page-openings .opening a.apply{
-	padding: 6px 8px;
+	padding: 4px 6px;
 	border: 1px solid #888;
 	border-radius: 2px;
 	color: #666;
 	position: absolute;
 	bottom: 10px;
-	right: 10px;
+	left: 15px;
 }
 
 
