@@ -386,6 +386,33 @@ section#careers-page-openings .opening a.apply{
 	left: 15px;
 }
 
+/* /products */
+section#product-page-products .row{
+	margin: 0px;
+}
+section#product-page-products .product{
+	min-height: 250px;
+	color: #fff;
+}
+section#product-page-products .product > div{
+	padding: 20px;
+}
+section#product-page-products .product:nth-child(odd){
+	background-color: #3B9;
+}
+section#product-page-products .product:nth-child(even){
+	background-color: #39D;
+}
+section#product-page-products .product h2{
+	font-weight: 300;
+}
+section#product-page-products .product p{
+	font-size: 16px;
+}
+section#product-page-products .product a.try{
+	color: white;
+	font-weight: bold;
+}
 
 /* Mobile CSS */
 @media only screen and (max-width : 768px) {

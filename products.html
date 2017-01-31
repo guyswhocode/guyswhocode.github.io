@@ -8,9 +8,24 @@ layout: page
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>We write code to make life easier !</h1>
+				<h1>We write code that makes life easier !</h1>
 				<p>Solving complicated problems using computer technologies is what we are good at.</p>
 			</div>
 		</div>
 	</div>
 </header>
+
+<section id="product-page-products">
+		<div class="row">
+		{% for product in site.categories.products %}
+			<div class="col-sm-6 product">
+				<div>
+					<img src="" alt="">
+					<h2>{{ product.title }}</h2>
+					<p>{{ product.excerpt }}</p>
+					<a href="" class="try">Try Demo</a>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+</section>
