@@ -378,8 +378,7 @@ section#careers-page-openings .opening p{
 	margin-bottom: 0px;
 }
 section#careers-page-openings .opening a.apply{
-	padding: 4px 6px;
-	border: 1px solid #888;
+	font-weight: 700;
 	border-radius: 2px;
 	color: #666;
 	position: absolute;
