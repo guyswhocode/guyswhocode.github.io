@@ -263,24 +263,31 @@ section#recent-projects .project img{
 /* Pages */
 
 /* /lab */
+section#lab-page-experiments{
+	background-image: url('../img/feed.jpg');
+	background-position: bottom center;
+	background-size: cover;
+}
 section#lab-page-experiments .row{
 	margin: 0px;
-	background-color: #3B7;
 }
-section#lab-page-experiments .row:nth-child(even){
+section#lab-page-experiments .exp-detail{
+	padding: 0px;
+	color: #fff;
+	min-height: 225px;
+}
+section#lab-page-experiments .exp-detail:nth-child(1n){
 	background-color: #39B;
+}
+section#lab-page-experiments .exp-detail:nth-child(2n){
+	background-color: #3B7;
 }
 section#lab-page-experiments .exp-img{
 	padding: 0px;
 }
 section#lab-page-experiments .exp-img img{
-	background-color: #fff;
 	padding: 20px;
 	width: 100%;
-}
-section#lab-page-experiments .exp-detail{
-	padding: 0px;
-	color: #fff;
 }
 section#lab-page-experiments .exp-detail div{
 	padding: 20px;
