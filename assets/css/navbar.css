@@ -1,4 +1,7 @@
 /* Navbar */
+#main-navigation{
+	background-color: #444;
+}
 #main-navigation .navbar-header a{
 	color:#fff;
 	font-weight:bold;
