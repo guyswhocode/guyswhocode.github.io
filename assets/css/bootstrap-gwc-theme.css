@@ -51,11 +51,16 @@ a.visit{
 }
 .paper{
   background-color:#FFF;
-  margin-top:10px;
-  padding:15px;
+  margin-top:20px;
   -webkit-box-shadow:0 4px 6px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.20);
   -moz-box-shadow:0 4px 6px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.20);
   box-shadow:0 4px 6px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.20);
+}
+.paper .content{
+  padding:15px;
+}
+.paper > img.cover{
+  width: 100%;
 }
 img.blurgrey{
   -webkit-filter: grayscale(100%) blur(1px);
