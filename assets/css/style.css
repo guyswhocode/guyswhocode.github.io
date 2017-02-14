@@ -126,7 +126,13 @@ section#specialization .technology{
 	padding:10px 10px;
 	text-align: center;
 }
-
+section#specialization .technology div{
+	padding: 10px;
+	background-color: #fff;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.12);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
 section#specialization .technology h3{
 	font-size:16px;
 }
@@ -367,7 +373,6 @@ section#careers-page-openings{
 	padding: 10px 0px;
 }
 section#careers-page-openings .opening{
-	margin-top:15px;
 	color: #666;
 }
 section#careers-page-openings .opening > div{

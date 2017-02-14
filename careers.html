@@ -21,13 +21,16 @@ layout: page
 			<section id="careers-page-openings">
 				<div class="row">
 					{% for opening in site.categories.careers %}
-					<div class="col-sm-12 opening paper">
-						<div>
-							<img src="{{  }}" alt="">
-							<h2><a href="">{{ opening.title }}</a></h2>
-							<p>{{ opening.excerpt }}</p>
+					<div class="col-sm-12 opening">
+						<div class="paper">
+							
+							<div class="content">
+								<img src="{{  }}" alt="">
+								<h2><a href="">{{ opening.title }}</a></h2>
+								<p>{{ opening.excerpt }}</p>
+							</div>
+							<a href="" class="apply">Apply Now</a>
 						</div>
-						<a href="" class="apply">Apply Now</a>
 					</div>
 					{% endfor %}
 				</div>	
