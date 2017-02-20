@@ -1,7 +1,7 @@
 ---
 layout: employee
-name: "Peter Devasia"
+name: "Afnas Muhammed"
 designation: "Marketing Manager"
-avatar: peter-devasia.jpg
+avatar: afnas-muhammed.jpg
 categories: team
 ---
