@@ -1,7 +1,7 @@
 ---
 layout: employee
 name: "Afnas Muhammed"
-designation: "Marketing Manager"
+designation: "UX Engineer"
 avatar: afnas-muhammed.jpg
 categories: team
 ---
