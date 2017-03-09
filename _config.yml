@@ -44,7 +44,7 @@ url: http://guyswhocode.com
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: "http://guyswhocode.github.io"
+baseurl: "https://guyswhocode.github.io"
 
 # Permalink structure
 permalink: /:title
