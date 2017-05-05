@@ -6,7 +6,7 @@ layout: page
 ---
 
 <section id="lab-page-experiments">
-	{% for post in site.categories.experiments %}
+	{% for post in site.categories.labs %}
 	{% assign mod3 = forloop.index | modulo: 3 %}
 	{% assign mod4 = forloop.index | modulo: 4 %}
 	{% assign mod6 = forloop.index | modulo: 6 %}
@@ -40,6 +40,6 @@ layout: page
 		</div>
 	</div><!-- experiment -->
 	{% endif %}
-	{% if mod3 == 0 or forloop.index == site.categories.experiments.size %}</div><!-- row -->{% endif %}
+	{% if mod3 == 0 or forloop.index == site.categories.labs.size %}</div><!-- row -->{% endif %}
 	{% endfor %}
 </section>
