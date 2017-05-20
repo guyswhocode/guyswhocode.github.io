@@ -3,7 +3,5 @@ layout: product
 title: "MindPrick"
 categories: products
 ---
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda fugiat nobis quasi tempora quos dolore eius eos quam voluptas animi!
+Campus Management System with the all the features need for the smooth running of accademics. Contains 32 modules. 
 <!--more-->
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia earum dolore maxime at similique id a quo provident animi repellendus.
