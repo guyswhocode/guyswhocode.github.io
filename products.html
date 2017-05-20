@@ -4,6 +4,7 @@ permalink: /products
 tags: products,softwares,applications,services
 layout: page
 ---
+
 <header class="page" style="background-image: url('assets/img/pages/gwc-products.jpg');">
 	<div class="container">
 		<div class="row">
@@ -23,7 +24,7 @@ layout: page
 					<img src="" alt="">
 					<h2>{{ product.title }}</h2>
 					<p>{{ product.excerpt }}</p>
-					<a href="" class="try">Try Demo</a>
+					<a href="/{{ product.permalink }}" class="try">Try Demo</a>
 				</div>
 			</div>
 		{% endfor %}
