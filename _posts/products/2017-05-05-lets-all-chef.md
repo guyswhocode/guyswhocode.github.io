@@ -2,7 +2,7 @@
 layout: product
 title: "Lets All Chef"
 categories: products
-permalink: products/lets-all-chef
+permalink: products/letsallchef
 ---
 
 It's a food service platform that suggests, orders and guides you to make recipes. Smart companion for home cooks and professional chefs. Accomplish more in the kitchen with what you have.
@@ -59,10 +59,13 @@ It's a food service platform that suggests, orders and guides you to make recipe
 * `CSS`
 * `JS`
 
-### Project Roles
-| Name   | Role                                  |
-| :----- | :------------------------------------ |
-| Sadiq  | Android REST API Integration          |
-| Qubin  | Data Logics and UI                    |
-| Jabiz  | DB Schema Modeling and Business Logic |
-| Shajan | API design and Web-App                |
+### Screenshots
+
+<div class="row">
+	<div class="col-sm-6">
+		<img src="{{ site.baseurl }}/uploads/lets-all-chef-index.jpg" alt="" class="img img-thumbnail img-responsive">
+	</div>
+	<div class="col-sm-6">
+		<img src="{{ site.baseurl }}/uploads/recipe-details-carrot-halwa.jpg" alt="" class="img img-thumbnail img-responsive">
+	</div>
+</div>
