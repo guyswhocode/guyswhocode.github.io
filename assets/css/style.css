@@ -16,7 +16,7 @@ header.page{
 	text-align: center;
 	background-color: #888; 
 	background-blend-mode: multiply;
-	background-position: bottom center;
+	background-position: center center;
 	background-size: cover;
 	color: white;
 }
