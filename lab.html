@@ -5,7 +5,7 @@ tags: ["lab", "experiments", "products", "testing", "beta", "works"]
 layout: page
 ---
 
-<section id="lab-page-experiments">
+<section id="lab-page-experiments" class="supernova-bg">
 	{% for post in site.categories.labs %}
 	{% assign mod3 = forloop.index | modulo: 3 %}
 	{% assign mod4 = forloop.index | modulo: 4 %}
@@ -15,7 +15,7 @@ layout: page
 	<!-- {{ forloop.index }} mod3 : {{ mod3 }} mod6: {{ mod6 }} -->
 	{% if mod6 >=4 or mod6 == 0 %}
 	<div class="experiment">
-		<div class="col-sm-2 exp-detail">
+		<div class="col-sm-2 exp-detail color">
 			<div>
 				<h2>{{ post.title }}</h2>
 				<p>{{ post.description }}</p>
@@ -31,7 +31,7 @@ layout: page
 		<div class="col-sm-2 exp-img">
 			<img src="assets/img/apps/{% if post.logo %}{{ post.logo }}{% else %}gwc-app-logo.png{% endif %}" alt="{{ post.title }} logo" title="{{ post.title }} logo">
 		</div>
-		<div class="col-sm-2 exp-detail">
+		<div class="col-sm-2 exp-detail color">
 			<div>
 				<h2>{{ post.title }}</h2>
 				<p>{{ post.description }}</p>
