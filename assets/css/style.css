@@ -301,6 +301,7 @@ section#recent-projects .project img{
 .supernova-bg .color:nth-child(5){
 	background-color: #E34;
 }
+
 /* Pages */
 
 /* /lab */
@@ -413,8 +414,9 @@ section#careers-page-openings .opening > div{
 	position: relative;
 }
 section#careers-page-openings .opening h2{
-margin-top: 0px;
-	font-size: 1.3em;
+	margin-top: 0px;
+	font-size: 1.7em;
+	font-weight: lighter;
 }
 section#careers-page-openings .opening h2 a{
 	color: #333;
