@@ -10,7 +10,6 @@ section#tagline,
 section#testimonials,{
 	margin-top:50px;
 }
-
 header.page{
 	padding:100px 0px;
 	text-align: center;
@@ -26,7 +25,6 @@ header.page h1{
 header.page p{
 	text-align: justify-all;
 }
-
 #intro{
 	background:#444444;
 	margin-top:0px;
@@ -66,7 +64,6 @@ section#about .sub-section{
 	text-align:justify;
 	font-weight:normal;
 }
-
 section#about-page-details .inspirations{
 	margin: 0px;
 }
@@ -81,7 +78,6 @@ section#about-page-details .inspirations .inspiration{
 section#about-page-details .col-sm-6{
 	padding: 0px;
 }
-
 
 /* Your Project */
 section#your-project{
@@ -398,6 +394,7 @@ section#lab-page-experiments .exp-detail a.visit{
 	transition: all 0.5s ease-in-out;
 }
 
+/* Career */
 section#careers-page-openings{
 	background: #f5f9fc;
 }
