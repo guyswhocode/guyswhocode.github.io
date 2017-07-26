@@ -24,7 +24,7 @@ layout: page
 					<img src="" alt="">
 					<h2>{{ product.title }}</h2>
 					<p>{{ product.excerpt | truncatewords: 25 }}</p>
-					<a href="{{ site.url }}{{ product.url }}" class="try">Try Demo</a>
+					<a href="{{ site.url }}/{{ product.permalink }}" class="try">Try Demo</a>
 				</div>
 			</div>
 		{% endfor %}
