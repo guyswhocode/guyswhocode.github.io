@@ -1,10 +1,10 @@
 <head>
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#444">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% endif %}{{ site.description }}">
-    <meta name="keywords" content="{% if page.tags %}{{ page.tags }},{% endif %}{{ site.meta-tags}}">
-    <meta name="author" content="Guys Who Code">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}gwc{% else %}{% for tag in site.meta-tags %}{{ tag }},{% endfor %}gwc{% endif %}">
+    <meta name="author" content="{%if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}">
     {% include styles.html %}
 </head>
