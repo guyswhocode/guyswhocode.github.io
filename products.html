@@ -23,8 +23,8 @@ layout: page
 				<div>
 					<img src="" alt="">
 					<h2>{{ product.title }}</h2>
-					<p>{{ product.excerpt }}</p>
-					<a href="/{{ product.permalink }}" class="try">Try Demo</a>
+					<p>{{ product.excerpt | truncatewords: 25 }}</p>
+					<a href="{{ site.url }}{{ product.url }}" class="try">Try Demo</a>
 				</div>
 			</div>
 		{% endfor %}
