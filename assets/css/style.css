@@ -410,11 +410,17 @@ section#product-page-products .product{
 section#product-page-products .product > div{
 	padding: 20px;
 }
-section#product-page-products .product:nth-child(odd){
+section#product-page-products .product:nth-child(1){
 	background-color: #3B9;
 }
-section#product-page-products .product:nth-child(even){
+section#product-page-products .product:nth-child(2){
 	background-color: #39D;
+}
+section#product-page-products .product:nth-child(3){
+	background-color: #D73;
+}
+section#product-page-products .product:nth-child(4){
+	background-color: #D77;
 }
 section#product-page-products .product h2{
 	font-weight: 300;
