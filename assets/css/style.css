@@ -282,12 +282,6 @@ section#lab-page-experiments .exp-detail{
 	color: #fff;
 	min-height: 225px;
 }
-section#lab-page-experiments .exp-detail:nth-child(1n){
-	background-color: rgba(51, 153, 187, 0.8);
-}
-section#lab-page-experiments .exp-detail:nth-child(2n){
-	background-color: rgba(51, 187, 119, 0.8);
-}
 section#lab-page-experiments .exp-img{
 	padding: 0px;
 }
