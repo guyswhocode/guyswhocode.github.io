@@ -2,6 +2,9 @@
 layout: product
 title: "Lets All Chef"
 categories: products
+cover: lets-all-chef-cover.jpg
+tagline: "Now it's your turn to cook"
+permalink: product/lets-all-chef
 ---
 
 It's a food service platform that suggests, orders and guides you to make recipes. Smart companion for home cooks and professional chefs. Accomplish more in the kitchen with what you have.
