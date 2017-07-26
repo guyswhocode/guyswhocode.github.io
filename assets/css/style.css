@@ -67,6 +67,22 @@ section#about .sub-section{
 	font-weight:normal;
 }
 
+section#about-page-details .inspirations{
+	margin: 0px;
+}
+section#about-page-details .inspirations .inspiration p{
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+}
+section#about-page-details .inspirations .inspiration{
+	padding: 100px 0px;
+}
+section#about-page-details .col-sm-6{
+	padding: 0px;
+}
+
+
 /* Your Project */
 section#your-project{
 	background-image: url('../img/project-planning.jpg');
