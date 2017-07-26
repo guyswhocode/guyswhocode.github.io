@@ -266,6 +266,25 @@ section#recent-projects .project img{
 	width: 100%;
 }
 
+/* Supernova */
+.supernova-bg .color:nth-child(1){
+	background-color: #3B9;
+}
+.supernova-bg .color:nth-child(2){
+	background-color: #39D;
+}
+.supernova-bg .color:nth-child(3){
+	background-color: #D73;
+}
+.supernova-bg .color:nth-child(4){
+	background-color: #D77;
+}
+.supernova-bg .color:nth-child(5){
+	background-color: #745;
+}
+.supernova-bg .color:nth-child(5){
+	background-color: #E34;
+}
 /* Pages */
 
 /* /lab */
