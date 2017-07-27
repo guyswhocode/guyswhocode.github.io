@@ -5,7 +5,7 @@ tags: ["team", "members", "group", "company", "crew"]
 layout: page
 ---
 
-<header class="page" style="background-image: url('assets/img/pages/gwc-team.jpg');">
+<header class="page" style="background-image: url('{{ site.baseurl }}/assets/img/pages/gwc-team.jpg');">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -23,7 +23,7 @@ layout: page
 			{% for post in site.categories.team %}
 			<div class="col-sm-3 member">
 				<div>
-					<img src="assets/img/team/{{ post.avatar }}" alt="">
+					<img src="{{ site.baseurl }}/assets/img/team/{{ post.avatar }}" alt="">
 					<div class="details">
 						<p class="name">{{ post.name }}</p>
 						<p class="pos">{{ post.designation }}</p>
