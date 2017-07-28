@@ -27,7 +27,7 @@ nav.navbar-default{
 .navbar-default .navbar-nav a:focus{
 	background-color: transparent;
 	color:white;
-	border-bottom:2px solid #3399DD;
+	border-bottom:2px solid #39D;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
@@ -36,8 +36,8 @@ nav.navbar-default{
 
 .navbar-default .navbar-nav a.active{
 	background-color: transparent;
-	color:#33bb77;
-	border-bottom:2px solid #3399DD;
+	color:#3b7;
+	border-bottom:2px solid #39D;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
@@ -51,7 +51,7 @@ nav.navbar-default{
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:active,
 .navbar-default .navbar-nav > li > a:focus{
-	color:#33bb77;
+	color:#3b7;
 }
 .navbar-default .navbar-toggle{
 	border-color: transparent;
