@@ -1,7 +1,8 @@
 # Basic details
 title: "Guys Who Code"
-tagline: "Coding the world, one byte at a time."
+tagline: "Learning to code, one byte at a time."
 description: "We are a nonprofit organization working to bridge the gap between people and computer technologies. We also aims at developing on ideas that are useful and beneficial to everyone."
+long-description: "GWC is run by a group of tech enthusiastic students and computer science engineers who are really passionate about teaching computer technologies to people. Mentors at GWC inspire people to learn computer programming languages by exposing them to real life problems. We help people to utilize the cutting edge technologies in a unique and efficient manner."
 meta-tags: ["gwc","guys who code","code","learn","technology"]
 
 
@@ -37,7 +38,7 @@ google_analytics: UA-92626288-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: http://guyswhocode.com
+url: https://guyswhocode.com
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
