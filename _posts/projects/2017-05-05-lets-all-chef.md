@@ -1,7 +1,7 @@
 ---
-layout: product
+layout: project
 title: "Lets All Chef"
-categories: products
+categories: projects
 cover: lets-all-chef-cover.jpg
 tagline: "Now it's your turn to cook"
 permalink: product/lets-all-chef
