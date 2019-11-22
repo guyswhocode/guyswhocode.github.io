@@ -1,15 +1,43 @@
 ---
-title: Page not found
-tags: ["404", "error", "not found"]
-layout: page
 ---
 
-<!-- Header -->
-<header id="error404">
-	<div class="container">
-		<div class="dialog">
-			<h1>404</h1>
-			<h2>Are you sure about this place ?</h2>
-		</div>
-	</div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/container.min.css">
+  <style>
+    body, html{
+      background: #222;
+    }
+    .main-container{
+      color: #CCC;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2em;
+    }
+    .main-container a{
+      text-decoration: none;
+      color: #3399dd;
+    }
+    section{
+      margin-top: 30px;
+    }
+    .hash{
+      color: #666;
+    }
+    .md-headings{
+      color: #33bb77;
+    }
+    .asterisk{
+      color: #993300;
+    }
+  </style>
+</head>
+<body>
+  <div class="ui text container main-container">
+    <h1>404</h1>
+    <h3>Page not found</h3>
+  </div>
+</body>
+</html>
