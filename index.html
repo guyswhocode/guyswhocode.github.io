@@ -49,26 +49,29 @@
 
     <section>  
       <span class="hash">##</span><span class="md-headings"> Projects</span>
-      {% for project in site.categories.projects %}
-      <div><span class="asterisk">*</span> {{ project.title }}</div>
-      {% endfor %}
+      <p>
+        {% for project in site.categories.projects %}
+        <span class="asterisk">*</span> {{ project.title }}
+        {% endfor %}
+      </p>
     </section>
 
-    <section>  
+    <section>
       <span class="hash">##</span><span class="md-headings"> Profiles</span>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.facebook }}">Facebook</a></div>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.github }}">Github</a></div>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.instagram }}">Instagram</a></div>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.linkedin }}">Linkedin</a></div>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.pinterest }}">Pinterest</a></div>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.twitter }}">Twitter</a></div>
-        <div><span class="asterisk">*</span> <a href="{{ site.social.youtube }}">Youtube</a></div>
+      <p>
+        <span class="asterisk">*</span> <a href="{{ site.social.facebook }}">Facebook</a>
+        <span class="asterisk">*</span> <a href="{{ site.social.github }}">Github</a>
+        <span class="asterisk">*</span> <a href="{{ site.social.instagram }}">Instagram</a>
+        <span class="asterisk">*</span> <a href="{{ site.social.linkedin }}">Linkedin</a>
+        <span class="asterisk">*</span> <a href="{{ site.social.pinterest }}">Pinterest</a>
+        <span class="asterisk">*</span> <a href="{{ site.social.twitter }}">Twitter</a>
+        <span class="asterisk">*</span> <a href="{{ site.social.youtube }}">Youtube</a>
+      </p>  
     </section>
 
-    <section>  
+    <!-- <section> 
       <span class="hash">##</span><span class="md-headings"> Contact</span>
-    </section>
-
+    </section> -->
   </div>
 </body>
 </html>
