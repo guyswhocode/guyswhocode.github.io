@@ -1,43 +1,225 @@
 ---
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/container.min.css">
-  <style>
-    body, html{
-      background: #222;
-    }
-    .main-container{
-      color: #CCC;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.2em;
-    }
-    .main-container a{
-      text-decoration: none;
-      color: #3399dd;
-    }
-    section{
-      margin-top: 30px;
-    }
-    .hash{
-      color: #666;
-    }
-    .md-headings{
-      color: #33bb77;
-    }
-    .asterisk{
-      color: #993300;
-    }
-  </style>
-</head>
-<body>
-  <div class="ui text container main-container">
-    <h1>404</h1>
-    <h3>Page not found</h3>
-  </div>
-</body>
+<!doctype html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>404: Not Found | Guys Who Code</title>
+        <style>
+            :root {
+                /* Colors from your palette */
+                --primary: #33bb77;
+                --secondary: #3399dd;
+                --dark-bg: #333333;
+                --light-bg: #f4f4f4;
+                --text-main: #eeeeee;
+                --text-dim: #bbbbbb;
+                --card-bg: #444444;
+            }
+
+            [data-theme="light"] {
+                --dark-bg: #ffffff;
+                --light-bg: #f4f4f4;
+                --text-main: #333333;
+                --text-dim: #666666;
+                --card-bg: #eeeeee;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            h1,
+            h2,
+            h3,
+            .logo {
+                font-family: "IBM Plex Mono", monospace;
+            }
+
+            body {
+                font-family: "Archivo", sans-serif;
+                background-color: var(--dark-bg);
+                color: var(--text-main);
+                line-height: 1.6;
+                transition: background 0.3s ease;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            nav {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 2rem;
+            }
+
+            .logo {
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: var(--primary);
+                text-decoration: none;
+            }
+
+            #theme-toggle {
+                background: none;
+                border: 1px solid var(--primary);
+                color: var(--primary);
+                padding: 0.5rem;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            header {
+                text-align: center;
+                padding: 6rem 0;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .header-content {
+                max-width: 650px;
+            }
+
+            h1 {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+                background: linear-gradient(
+                    to right,
+                    var(--primary),
+                    var(--secondary)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 1.5rem;
+            }
+
+            .quote {
+                color: var(--text-dim);
+                font-size: 1.2rem;
+                margin-bottom: 2.5rem;
+                font-style: italic;
+                position: relative;
+                padding: 0 1rem;
+            }
+
+            .server-attribution {
+                display: block;
+                margin-top: 1rem;
+                font-style: normal;
+                font-weight: bold;
+                color: var(--text-main);
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 0.9rem;
+            }
+
+            .btn-home {
+                display: inline-block;
+                background: transparent;
+                border: 1px solid var(--primary);
+                color: var(--primary);
+                padding: 0.8rem 2rem;
+                text-decoration: none;
+                border-radius: 5px;
+                font-family: "IBM Plex Mono", monospace;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+
+            .btn-home:hover {
+                background: var(--primary);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(51, 187, 119, 0.3);
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem;
+                font-size: 0.9rem;
+                color: var(--text-dim);
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            /* Light Mode specific tweaks */
+            [data-theme="light"] nav {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            [data-theme="light"] footer {
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="container nav-flex">
+                <a href="/" class="logo">Guys Who Code</a>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <header>
+            <div class="container header-content">
+                <h1>404: Not Found</h1>
+                <p class="quote">
+                    "I've looked everywhere. The database, the cache, behind the
+                    server rack, even in the office fridge. It's just not here."
+                    <span class="server-attribution">— The Server</span>
+                </p>
+                <a href="/" class="btn-home">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px"></i
+                    >Return Home
+                </a>
+            </div>
+        </header>
+
+        <footer>
+            <p>&copy; 2026 Guys Who Code. Built with passion.</p>
+        </footer>
+
+        <script>
+            // Theme Toggle Logic
+            const themeToggle = document.getElementById("theme-toggle");
+            const body = document.documentElement;
+            const icon = themeToggle.querySelector("i");
+
+            // Simple toggle for consistency with index.html
+            themeToggle.addEventListener("click", () => {
+                if (body.getAttribute("data-theme") === "dark") {
+                    body.setAttribute("data-theme", "light");
+                    icon.classList.replace("fa-moon", "fa-sun");
+                } else {
+                    body.setAttribute("data-theme", "dark");
+                    icon.classList.replace("fa-sun", "fa-moon");
+                }
+            });
+        </script>
+    </body>
 </html>
