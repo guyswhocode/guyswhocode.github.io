@@ -1,214 +1,1007 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Guys Who Code</title>
         <style>
+            /* ============================================================
+               CSS Custom Properties
+               ============================================================ */
             :root {
-                /* Colors from your palette */
-                --primary: #33bb77;
-                --secondary: #3399dd;
-                --dark-bg: #333333;
-                --light-bg: #f4f4f4;
-                --text-main: #eeeeee;
-                --text-dim: #bbbbbb;
-                --card-bg: #444444;
+                --green: #33bb77;
+                --blue: #3399dd;
+                --green-glow: rgba(51, 187, 119, 0.12);
+                --blue-glow: rgba(51, 153, 221, 0.12);
+                --bg: #070809;
+                --bg-alt: #0d0f10;
+                --bg-card: #121416;
+                --bg-card-hover: #181b1d;
+                --text: #e8eaed;
+                --text-secondary: #9aa0a6;
+                --text-dim: #5f656b;
+                --border: rgba(255, 255, 255, 0.05);
+                --border-hover: rgba(255, 255, 255, 0.12);
+                --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.35);
+                --shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.55);
+                --radius: 14px;
+                --radius-sm: 10px;
+                --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+                --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             }
 
             [data-theme="light"] {
-                --dark-bg: #ffffff;
-                --light-bg: #f4f4f4;
-                --text-main: #333333;
-                --text-dim: #666666;
-                --card-bg: #eeeeee;
+                --green: #2daa6b;
+                --blue: #2b8bcc;
+                --green-glow: rgba(45, 170, 107, 0.08);
+                --blue-glow: rgba(43, 139, 204, 0.08);
+                --bg: #f4f5f7;
+                --bg-alt: #ffffff;
+                --bg-card: #ffffff;
+                --bg-card-hover: #f8f9fa;
+                --text: #1f2937;
+                --text-secondary: #6b7280;
+                --text-dim: #9ca3af;
+                --border: rgba(0, 0, 0, 0.07);
+                --border-hover: rgba(0, 0, 0, 0.15);
+                --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.05);
+                --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
             }
 
-            * {
+            /* ============================================================
+               Reset & Base
+               ============================================================ */
+            *,
+            *::before,
+            *::after {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Source Code Pro", monospace;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.7;
+                transition: background 0.5s ease, color 0.5s ease;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                overflow-x: hidden;
+                cursor: default;
             }
 
             h1,
             h2,
             h3,
             .logo {
-                font-family: "IBM Plex Mono", monospace;
+                font-family: "Source Code Pro", monospace;
             }
 
-            body {
-                font-family: "Archivo", sans-serif;
-                background-color: var(--dark-bg);
-                color: var(--text-main);
-                line-height: 1.6;
-                transition: background 0.3s ease;
+            /* ============================================================
+               Noise texture overlay
+               ============================================================ */
+            body::after {
+                content: "";
+                position: fixed;
+                inset: 0;
+                z-index: 9999;
+                pointer-events: none;
+                opacity: 0.025;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+                background-repeat: repeat;
+                background-size: 256px 256px;
             }
 
+            /* ============================================================
+               Container
+               ============================================================ */
             .container {
-                max-width: 900px;
+                max-width: 960px;
                 margin: 0 auto;
-                padding: 2rem;
+                padding: 0 2rem;
+                position: relative;
+                z-index: 1;
             }
 
+            .container--wide {
+                max-width: 1100px;
+            }
+
+            /* ============================================================
+               Navigation
+               ============================================================ */
             nav {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                padding: 0 2rem;
+                transition: background 0.4s ease, backdrop-filter 0.4s ease,
+                    box-shadow 0.4s ease;
             }
 
-            .nav-flex {
+            nav::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: var(--bg);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                pointer-events: none;
+            }
+
+            nav.scrolled::before {
+                opacity: 0.72;
+            }
+
+            nav.scrolled {
+                backdrop-filter: blur(18px) saturate(1.5);
+                -webkit-backdrop-filter: blur(18px) saturate(1.5);
+                box-shadow: 0 1px 0 var(--border);
+            }
+
+            .nav-inner {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 2rem;
+                height: 64px;
+                position: relative;
+                z-index: 1;
+                max-width: 1100px;
+                margin: 0 auto;
             }
 
             .logo {
-                font-weight: bold;
-                font-size: 1.5rem;
-                color: var(--primary);
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: var(--text);
+                letter-spacing: -0.03em;
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                user-select: none;
+            }
+
+            .logo-mark {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 8px;
+                background: linear-gradient(135deg, var(--green), var(--blue));
+                position: relative;
+                overflow: hidden;
+            }
+
+            .logo-mark::after {
+                content: "&lt;/&gt;";
+                font-size: 0.55rem;
+                font-weight: 700;
+                color: #fff;
+                font-family: "Source Code Pro", monospace;
+                letter-spacing: 0;
+            }
+
+            .nav-actions {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
             }
 
             #theme-toggle {
-                background: none;
-                border: 1px solid var(--primary);
-                color: var(--primary);
-                padding: 0.5rem;
+                background: transparent;
+                border: 1px solid var(--border);
+                color: var(--text-dim);
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
                 cursor: pointer;
-                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.95rem;
+                transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
             }
 
-            header {
+            #theme-toggle:hover {
+                color: var(--text-secondary);
+                border-color: var(--text-dim);
+            }
+
+            /* ============================================================
+               Hero
+               ============================================================ */
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 text-align: center;
-                padding: 4rem 0;
+                position: relative;
+                padding: 7rem 0 5rem;
+                overflow: hidden;
             }
 
-            h1 {
-                font-size: 3rem;
-                background: linear-gradient(
-                    to right,
-                    var(--primary),
-                    var(--secondary)
+            /* Floating decorative blobs */
+            .hero-blob {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(80px);
+                opacity: 0.15;
+                pointer-events: none;
+                animation: blobFloat 20s ease-in-out infinite;
+            }
+
+            .hero-blob--1 {
+                width: 400px;
+                height: 400px;
+                background: var(--green);
+                top: -5%;
+                left: -8%;
+                animation-delay: 0s;
+            }
+
+            .hero-blob--2 {
+                width: 350px;
+                height: 350px;
+                background: var(--blue);
+                bottom: -5%;
+                right: -8%;
+                animation-delay: -7s;
+            }
+
+            .hero-blob--3 {
+                width: 200px;
+                height: 200px;
+                background: var(--green);
+                top: 60%;
+                left: 50%;
+                animation-delay: -14s;
+            }
+
+            @keyframes blobFloat {
+                0%,
+                100% {
+                    transform: translate(0, 0) scale(1);
+                }
+                33% {
+                    transform: translate(30px, -30px) scale(1.08);
+                }
+                66% {
+                    transform: translate(-20px, 20px) scale(0.95);
+                }
+            }
+
+            .hero-grid-dots {
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(
+                    var(--border) 1px,
+                    transparent 1px
                 );
+                background-size: 40px 40px;
+                mask-image: radial-gradient(
+                    ellipse 60% 60% at center,
+                    black 20%,
+                    transparent 70%
+                );
+                -webkit-mask-image: radial-gradient(
+                    ellipse 60% 60% at center,
+                    black 20%,
+                    transparent 70%
+                );
+                pointer-events: none;
+            }
+
+            /* ===== Floating code characters in hero ===== */
+            .hero-code-rain {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+                z-index: 0;
+                mask-image: radial-gradient(
+                    ellipse 55% 55% at center,
+                    black 10%,
+                    transparent 65%
+                );
+                -webkit-mask-image: radial-gradient(
+                    ellipse 55% 55% at center,
+                    black 10%,
+                    transparent 65%
+                );
+            }
+
+            .code-char {
+                position: absolute;
+                font-family: "Source Code Pro", monospace;
+                font-size: 0.85rem;
+                font-weight: 500;
+                letter-spacing: 0;
+                color: var(--text-dim);
+                opacity: 0;
+                animation: codeFloat var(--dur, 14s) ease-in-out var(--del, 0s) infinite;
+                user-select: none;
+                will-change: transform;
+                line-height: 1;
+            }
+
+            .code-char:nth-child(4n) {
+                color: var(--green);
+                opacity: 0;
+            }
+            .code-char:nth-child(5n+2) {
+                color: var(--blue);
+                opacity: 0;
+            }
+            .code-char:nth-child(7n+3) {
+                font-size: 0.65rem;
+            }
+            .code-char:nth-child(6n+5) {
+                font-size: 1.05rem;
+            }
+
+            @keyframes codeFloat {
+                0% {
+                    opacity: 0;
+                    transform: translateY(0) translateX(0) scale(0.8);
+                }
+                8% {
+                    opacity: var(--max-op, 0.12);
+                    transform: translateY(2%) translateX(var(--drift-x, 8px)) scale(1);
+                }
+                85% {
+                    opacity: var(--max-op, 0.12);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(calc(-100vh - 60px)) translateX(var(--drift-x-end, -12px)) scale(0.85);
+                }
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.35rem 1rem;
+                border: 1px solid var(--border);
+                border-radius: 100px;
+                font-size: 0.75rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+                opacity: 0;
+                transform: translateY(12px);
+                animation: fadeSlideUp 0.6s var(--ease-out) 0.2s forwards;
+            }
+
+            .hero-badge-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--green);
+                animation: pulseDot 2s ease-in-out infinite;
+            }
+
+            @keyframes pulseDot {
+                0%,
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                50% {
+                    opacity: 0.4;
+                    transform: scale(0.8);
+                }
+            }
+
+            @keyframes fadeSlideUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .hero-title {
+                font-size: clamp(2.8rem, 7vw, 5rem);
+                font-weight: 700;
+                line-height: 1.08;
+                letter-spacing: -0.04em;
+                background: linear-gradient(
+                    135deg,
+                    var(--green) 0%,
+                    var(--blue) 50%,
+                    var(--green) 100%
+                );
+                background-size: 200% 200%;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: gradientShift 6s ease-in-out infinite;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: gradientShift 6s ease-in-out infinite,
+                    fadeSlideUp 0.7s var(--ease-out) 0.4s forwards;
             }
 
-            .tagline {
+            @keyframes gradientShift {
+                0%,
+                100% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+            }
+
+            .hero-tagline {
+                color: var(--text-secondary);
+                font-size: clamp(1.05rem, 2vw, 1.25rem);
+                margin-top: 1.25rem;
+                font-weight: 400;
+                letter-spacing: 0.01em;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeSlideUp 0.7s var(--ease-out) 0.6s forwards;
+            }
+
+            .hero-cursor {
+                display: inline-block;
+                width: 2px;
+                height: 1.15em;
+                background: var(--green);
+                margin-left: 4px;
+                vertical-align: middle;
+                animation: blink 1s step-end infinite;
+            }
+
+            @keyframes blink {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0;
+                }
+            }
+
+            .hero-scroll-hint {
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.4rem;
                 color: var(--text-dim);
-                font-size: 1.2rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                opacity: 0;
+                animation: fadeSlideUp 0.6s var(--ease-out) 1s forwards;
             }
 
+            .hero-scroll-line {
+                width: 1px;
+                height: 36px;
+                background: linear-gradient(
+                    to bottom,
+                    var(--text-dim),
+                    transparent
+                );
+                animation: scrollPulse 2s ease-in-out infinite;
+            }
+
+            @keyframes scrollPulse {
+                0%,
+                100% {
+                    transform: scaleY(0.5);
+                    opacity: 0.3;
+                }
+                50% {
+                    transform: scaleY(1);
+                    opacity: 1;
+                }
+            }
+
+            /* ============================================================
+               Section headings (shared)
+               ============================================================ */
             section {
-                margin-bottom: 4rem;
+                padding: 5rem 0;
+                position: relative;
+            }
+
+            section.section--alt {
+                background: var(--bg-alt);
+            }
+
+            .section-label {
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--text-dim);
+                margin-bottom: 0.75rem;
+                font-family: "Source Code Pro", monospace;
             }
 
             h2 {
-                border-left: 4px solid var(--secondary);
-                padding-left: 1rem;
-                margin-bottom: 1.5rem;
+                font-size: 1.75rem;
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 2rem;
+                letter-spacing: -0.02em;
             }
 
-            /* Project Cards - Professional Re-design */
-            .project-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
+            /* ============================================================
+               Reveal (scroll animation)
+               ============================================================ */
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.7s var(--ease-out),
+                    transform 0.7s var(--ease-out);
             }
 
-            .card {
-                background: var(--card-bg);
-                padding: 2rem;
-                /*border-radius: 0px;*/
-                position: relative;
-                overflow: hidden;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .reveal--delay-1 {
+                transition-delay: 0.1s;
+            }
+            .reveal--delay-2 {
+                transition-delay: 0.2s;
+            }
+            .reveal--delay-3 {
+                transition-delay: 0.3s;
+            }
+            .reveal--delay-4 {
+                transition-delay: 0.4s;
+            }
+
+            /* ============================================================
+               Mission
+               ============================================================ */
+            .mission-block {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                gap: 0.5rem;
+                max-width: 680px;
+                margin: 0 auto;
             }
 
-            .card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-                border-color: var(--secondary);
+            .mission-marker {
+                font-size: 4rem;
+                font-weight: 700;
+                line-height: 1;
+                font-family: "Source Code Pro", monospace;
+                background: linear-gradient(
+                    180deg,
+                    var(--green),
+                    var(--blue)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                opacity: 0.6;
+                user-select: none;
             }
 
-            .card:hover::before {
-                width: 6px; /* Slightly thicker on hover */
-                opacity: 1;
+            .mission-body p {
+                color: var(--text-secondary);
+                font-size: 1.1rem;
+                line-height: 1.85;
             }
 
-            .card a {
-                text-decoration: none;
-                color: var(--text-main);
+            .mission-divider {
+                margin: 1.5rem auto 0;
+                width: 48px;
+                height: 2px;
+                background: linear-gradient(90deg, var(--green), var(--blue));
+                border-radius: 2px;
             }
 
-            .card h3 {
-                color: var(--text-main);
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-                letter-spacing: 0.5px;
+            /* ============================================================
+               Projects (bento grid)
+               ============================================================ */
+            .bento-grid {
+                display: grid;
+                gap: 1rem;
             }
 
-            .card-content p {
+            /* Desktop: 2×2 bento with alternating spans */
+            @media (min-width: 640px) {
+                .bento-grid {
+                    grid-template-columns: 1.15fr 0.85fr;
+                }
+                .bento-card:nth-child(3) {
+                    grid-column: 1;
+                }
+                .bento-card:nth-child(4) {
+                    grid-column: 2;
+                }
+            }
+
+            .bento-card {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.4s var(--ease);
+                box-shadow: var(--shadow-card);
+                position: relative;
+                overflow: hidden;
+                cursor: default;
+            }
+
+            .bento-card::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                background: radial-gradient(
+                    circle at var(--mx, 50%) var(--my, 50%),
+                    var(--green-glow) 0%,
+                    var(--blue-glow) 40%,
+                    transparent 70%
+                );
+                opacity: 0;
+                transition: opacity 0.5s var(--ease);
+                pointer-events: none;
+            }
+
+            .bento-card:hover {
+                background: var(--bg-card-hover);
+                border-color: transparent;
+                box-shadow: var(--shadow-hover), 0 0 0 1px var(--green-glow);
+                transform: translateY(-6px);
+            }
+
+            .bento-card:hover::after {
+                opacity: 0.8;
+            }
+
+            .bento-card-index {
+                font-size: 0.7rem;
+                font-weight: 600;
                 color: var(--text-dim);
-                font-size: 0.95rem;
-                line-height: 1.5;
+                letter-spacing: 0.06em;
+                font-family: "Source Code Pro", monospace;
+                margin-bottom: 1rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            .bento-card h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 0.75rem;
+                letter-spacing: -0.01em;
+                position: relative;
+                z-index: 1;
+            }
+
+            .bento-card h3 a {
+                text-decoration: none;
+                color: inherit;
+                transition: color 0.3s var(--ease);
+            }
+
+            .bento-card h3 a:hover {
+                color: var(--green);
+            }
+
+            .bento-card-content {
+                position: relative;
+                z-index: 1;
+                flex: 1;
+            }
+
+            .bento-card-content p {
+                color: var(--text-secondary);
+                font-size: 0.925rem;
+                line-height: 1.65;
                 margin: 0;
             }
 
-            /* Light Mode specific tweaks for cards */
-            [data-theme="light"] .card {
-                border: 1px solid rgba(0, 0, 0, 0.05);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            .bento-card-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: var(--text-dim);
+                text-decoration: none;
+                margin-top: 1.25rem;
+                position: relative;
+                z-index: 1;
+                transition: color 0.3s var(--ease), gap 0.3s var(--ease);
             }
 
-            [data-theme="light"] .card:hover {
-                box-shadow: 0 10px 20px rgba(51, 153, 221, 0.15);
+            .bento-card-link i {
+                font-size: 0.65rem;
+                transition: transform 0.3s var(--ease);
             }
 
-            /* Social Links */
-            .social-links {
+            .bento-card:hover .bento-card-link {
+                color: var(--green);
+                gap: 0.6rem;
+            }
+
+            .bento-card:hover .bento-card-link i {
+                transform: translateX(3px);
+            }
+
+            /* ============================================================
+               Social / Connect
+               ============================================================ */
+            .social-grid {
                 display: flex;
-                gap: 1.5rem;
-                font-size: 1.5rem;
+                flex-wrap: wrap;
+                gap: 0.75rem;
             }
 
-            .social-links a {
-                color: var(--text-main);
-                transition: color 0.3s;
+            .social-btn {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 52px;
+                height: 52px;
+                border-radius: var(--radius-sm);
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                color: var(--text-secondary);
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: all 0.35s var(--ease);
+                box-shadow: var(--shadow-card);
+                overflow: hidden;
             }
 
-            .social-links a:hover {
-                color: var(--secondary);
+            .social-btn i {
+                position: relative;
+                z-index: 1;
+                transition: transform 0.3s var(--ease);
             }
 
-            /* Back to Top */
-            #backToTop {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: var(--primary);
-                color: white;
-                border: none;
-                padding: 10px 15px;
-                border-radius: 50%;
-                cursor: pointer;
+            .social-btn::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                opacity: 0;
+                transition: opacity 0.35s var(--ease);
             }
 
+            .social-btn:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .social-btn:hover i {
+                transform: scale(1.15);
+            }
+
+            /* Brand-specific hover colours */
+            .social-btn[aria-label="Facebook"]:hover {
+                color: #1877f2;
+                border-color: #1877f2;
+            }
+            .social-btn[aria-label="Facebook"]::before {
+                background: rgba(24, 119, 242, 0.1);
+            }
+            .social-btn[aria-label="Facebook"]:hover::before {
+                opacity: 1;
+            }
+
+            .social-btn[aria-label="Github"]:hover {
+                color: var(--text);
+                border-color: var(--text);
+            }
+            .social-btn[aria-label="Github"]::before {
+                background: var(--green-glow);
+            }
+            .social-btn[aria-label="Github"]:hover::before {
+                opacity: 1;
+            }
+
+            .social-btn[aria-label="Instagram"]:hover {
+                color: #e4405f;
+                border-color: #e4405f;
+            }
+            .social-btn[aria-label="Instagram"]::before {
+                background: rgba(228, 64, 95, 0.1);
+            }
+            .social-btn[aria-label="Instagram"]:hover::before {
+                opacity: 1;
+            }
+
+            .social-btn[aria-label="Linkedin"]:hover {
+                color: #0a66c2;
+                border-color: #0a66c2;
+            }
+            .social-btn[aria-label="Linkedin"]::before {
+                background: rgba(10, 102, 194, 0.1);
+            }
+            .social-btn[aria-label="Linkedin"]:hover::before {
+                opacity: 1;
+            }
+
+            .social-btn[aria-label="Pinterest"]:hover {
+                color: #bd081c;
+                border-color: #bd081c;
+            }
+            .social-btn[aria-label="Pinterest"]::before {
+                background: rgba(189, 8, 28, 0.1);
+            }
+            .social-btn[aria-label="Pinterest"]:hover::before {
+                opacity: 1;
+            }
+
+            .social-btn[aria-label="Twitter"]:hover {
+                color: var(--text);
+                border-color: var(--text);
+            }
+            .social-btn[aria-label="Twitter"]::before {
+                background: rgba(255, 255, 255, 0.04);
+            }
+            .social-btn[aria-label="Twitter"]:hover::before {
+                opacity: 1;
+            }
+
+            .social-btn[aria-label="Youtube"]:hover {
+                color: #ff0000;
+                border-color: #ff0000;
+            }
+            .social-btn[aria-label="Youtube"]::before {
+                background: rgba(255, 0, 0, 0.1);
+            }
+            .social-btn[aria-label="Youtube"]:hover::before {
+                opacity: 1;
+            }
+
+            /* ============================================================
+               Footer
+               ============================================================ */
             footer {
                 text-align: center;
-                padding: 2rem;
-                font-size: 0.9rem;
+                padding: 3rem 2rem;
+                border-top: 1px solid var(--border);
                 color: var(--text-dim);
+                font-size: 0.85rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            footer span {
+                color: var(--green);
+            }
+
+            /* ============================================================
+               Back to Top
+               ============================================================ */
+            #backToTop {
+                position: fixed;
+                bottom: 28px;
+                right: 28px;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: var(--bg-card);
+                color: var(--text-secondary);
+                border: 1px solid var(--border);
+                box-shadow: var(--shadow-hover);
+                cursor: pointer;
+                font-size: 1rem;
+                z-index: 200;
+                transition: all 0.35s var(--ease);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                opacity: 0;
+                transform: translateY(12px) scale(0.9);
+                pointer-events: none;
+            }
+
+            #backToTop.visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                pointer-events: auto;
+            }
+
+            #backToTop:hover {
+                background: var(--green);
+                color: #fff;
+                border-color: var(--green);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 24px rgba(51, 187, 119, 0.25);
+            }
+
+            /* ============================================================
+               Responsive
+               ============================================================ */
+            @media (max-width: 640px) {
+                .container {
+                    padding: 0 1.25rem;
+                }
+                nav {
+                    padding: 0 1.25rem;
+                }
+
+                section {
+                    padding: 3.5rem 0;
+                }
+                .hero {
+                    min-height: 90vh;
+                    padding: 5rem 0 3rem;
+                }
+
+                .hero-blob--1,
+                .hero-blob--2,
+                .hero-blob--3 {
+                    display: none;
+                }
+
+                .mission-block {
+                    gap: 0.5rem;
+                }
+                .mission-marker {
+                    font-size: 2.5rem;
+                    line-height: 1;
+                }
+                .mission-body p {
+                    font-size: 1rem;
+                }
+
+                .bento-grid {
+                    gap: 0.85rem;
+                }
+                .bento-card {
+                    padding: 1.5rem;
+                }
+
+                .social-btn {
+                    width: 46px;
+                    height: 46px;
+                    font-size: 1.05rem;
+                }
+
+                #backToTop {
+                    bottom: 20px;
+                    right: 20px;
+                    width: 40px;
+                    height: 40px;
+                }
             }
         </style>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
         <link
@@ -217,37 +1010,103 @@
         />
     </head>
     <body>
-        <nav>
-            <div class="container nav-flex">
-                <div class="logo">Guys Who Code</div>
-                <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
+        <!-- Navigation -->
+        <nav id="navbar">
+            <div class="nav-inner">
+                <div class="logo">
+                    <span class="logo-mark" aria-hidden="true"></span>
+                    Guys Who Code
+                </div>
+                <div class="nav-actions">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
-        <header>
-            <div class="container">
-                <h1>Guys Who Code</h1>
-                <p class="tagline">Learning to code, one byte at a time.</p>
+        <!-- Hero -->
+        <header class="hero" id="hero">
+            <div class="hero-blob hero-blob--1"></div>
+            <div class="hero-blob hero-blob--2"></div>
+            <div class="hero-blob hero-blob--3"></div>
+            <div class="hero-grid-dots"></div>
+
+            <!-- Floating code characters -->
+            <div class="hero-code-rain" aria-hidden="true">
+                <span class="code-char" style="left: 6%; top: 70%; --dur: 16s; --del: 0s; --drift-x: 12px; --drift-x-end: -8px; --max-op: 0.38;">&lt;/&gt;</span>
+                <span class="code-char" style="left: 14%; top: 50%; --dur: 20s; --del: 2s; --drift-x: -10px; --drift-x-end: 14px; --max-op: 0.28;">const</span>
+                <span class="code-char" style="left: 22%; top: 85%; --dur: 13s; --del: 5s; --drift-x: 8px; --drift-x-end: -6px; --max-op: 0.32;">{ }</span>
+                <span class="code-char" style="left: 30%; top: 40%; --dur: 18s; --del: 1s; --drift-x: -14px; --drift-x-end: 10px; --max-op: 0.22;">=&gt;</span>
+                <span class="code-char" style="left: 38%; top: 60%; --dur: 15s; --del: 7s; --drift-x: 6px; --drift-x-end: -10px; --max-op: 0.36;">fn()</span>
+                <span class="code-char" style="left: 46%; top: 30%; --dur: 22s; --del: 4s; --drift-x: -8px; --drift-x-end: 16px; --max-op: 0.25;">0101</span>
+                <span class="code-char" style="left: 54%; top: 75%; --dur: 14s; --del: 9s; --drift-x: 10px; --drift-x-end: -12px; --max-op: 0.30;">[ ]</span>
+                <span class="code-char" style="left: 62%; top: 45%; --dur: 19s; --del: 3s; --drift-x: -12px; --drift-x-end: 8px; --max-op: 0.34;">//</span>
+                <span class="code-char" style="left: 70%; top: 80%; --dur: 17s; --del: 6s; --drift-x: 14px; --drift-x-end: -6px; --max-op: 0.28;">let</span>
+                <span class="code-char" style="left: 78%; top: 55%; --dur: 21s; --del: 10s; --drift-x: -6px; --drift-x-end: 14px; --max-op: 0.22;">===</span>
+                <span class="code-char" style="left: 86%; top: 35%; --dur: 16s; --del: 8s; --drift-x: 8px; --drift-x-end: -10px; --max-op: 0.32;">async</span>
+                <span class="code-char" style="left: 92%; top: 65%; --dur: 18s; --del: 0s; --drift-x: -10px; --drift-x-end: 12px; --max-op: 0.25;">await</span>
+                <span class="code-char" style="left: 10%; top: 20%; --dur: 24s; --del: 12s; --drift-x: 6px; --drift-x-end: -14px; --max-op: 0.20;">import</span>
+                <span class="code-char" style="left: 50%; top: 15%; --dur: 15s; --del: 11s; --drift-x: -16px; --drift-x-end: 8px; --max-op: 0.28;">export</span>
+                <span class="code-char" style="left: 34%; top: 90%; --dur: 20s; --del: 14s; --drift-x: 12px; --drift-x-end: -4px; --max-op: 0.18;">class</span>
+                <span class="code-char" style="left: 76%; top: 20%; --dur: 17s; --del: 13s; --drift-x: -8px; --drift-x-end: 6px; --max-op: 0.30;">null</span>
+                <span class="code-char" style="left: 44%; top: 95%; --dur: 22s; --del: 16s; --drift-x: 4px; --drift-x-end: -12px; --max-op: 0.20;">&amp;&amp;</span>
+                <span class="code-char" style="left: 18%; top: 10%; --dur: 19s; --del: 15s; --drift-x: -6px; --drift-x-end: 10px; --max-op: 0.25;">typeof</span>
+                <span class="code-char" style="left: 60%; top: 10%; --dur: 16s; --del: 17s; --drift-x: 10px; --drift-x-end: -8px; --max-op: 0.22;">? .</span>
+                <span class="code-char" style="left: 26%; top: 30%; --dur: 23s; --del: 18s; --drift-x: -12px; --drift-x-end: 14px; --max-op: 0.18;">yield</span>
+            </div>
+
+            <div class="hero-content container">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Community
+                </div>
+                <h1 class="hero-title">Guys Who Code</h1>
+                <p class="hero-tagline">
+                    Learning to code, one byte at a time
+                    <span class="hero-cursor"></span>
+                </p>
+            </div>
+
+            <div class="hero-scroll-hint">
+                <span>Scroll</span>
+                <div class="hero-scroll-line"></div>
             </div>
         </header>
 
-        <main class="container">
-            <section id="mission">
-                <h2>Mission</h2>
-                <p>
-                    We are a community working to bridge the gap between people
-                    and computer technologies. We also aim at developing ideas
-                    that are useful and beneficial to everyone.
-                </p>
+        <!-- Main -->
+        <main>
+            <!-- Mission -->
+            <section id="mission" class="section--alt">
+                <div class="container">
+                    <p class="section-label reveal">About</p>
+                    <div class="mission-block">
+                        <div class="mission-marker reveal reveal--delay-1">
+                            &ldquo;
+                        </div>
+                        <div class="mission-body reveal reveal--delay-1">
+                            <p>
+                                We are a community working to bridge the gap
+                                between people and computer technologies. We
+                                also aim at developing ideas that are useful and
+                                beneficial to everyone.
+                            </p>
+                            <div class="mission-divider"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
+            <!-- Projects -->
             <section id="projects">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project-grid">
-                        <div class="card">
+                <div class="container container--wide">
+                    <p class="section-label reveal">Projects</p>
+                    <h2 class="reveal" style="margin-bottom: 1.5rem">
+                        What we build
+                    </h2>
+                    <div class="bento-grid">
+                        <div class="bento-card reveal reveal--delay-1">
+                            <span class="bento-card-index">01</span>
                             <h3>
                                 <a
                                     href="https://letsallchef.github.io/"
@@ -255,14 +1114,23 @@
                                     >Lets All Chef</a
                                 >
                             </h3>
-                            <div class="card-content">
+                            <div class="bento-card-content">
                                 <p>
                                     A collaborative platform for culinary
                                     enthusiasts to share and discover recipes.
                                 </p>
                             </div>
+                            <a
+                                class="bento-card-link"
+                                href="https://letsallchef.github.io/"
+                                target="_blank"
+                            >
+                                Visit project <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div class="card">
+
+                        <div class="bento-card reveal reveal--delay-2">
+                            <span class="bento-card-index">02</span>
                             <h3>
                                 <a
                                     href="https://guyswhocode.com/hn"
@@ -270,14 +1138,23 @@
                                     >HN</a
                                 >
                             </h3>
-                            <div class="card-content">
+                            <div class="bento-card-content">
                                 <p>
                                     Modern, elegant and mobile friendly
                                     Hackernews browser client.
                                 </p>
                             </div>
+                            <a
+                                class="bento-card-link"
+                                href="https://guyswhocode.com/hn"
+                                target="_blank"
+                            >
+                                Visit project <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div class="card">
+
+                        <div class="bento-card reveal reveal--delay-3">
+                            <span class="bento-card-index">03</span>
                             <h3>
                                 <a
                                     href="https://guyswhocode.com/nalettes/"
@@ -285,16 +1162,25 @@
                                     >Nalettes</a
                                 >
                             </h3>
-                            <div class="card-content">
+                            <div class="bento-card-content">
                                 <p>
                                     Focusing on minimalist design patterns and
                                     color palettes.
                                 </p>
                             </div>
+                            <a
+                                class="bento-card-link"
+                                href="https://guyswhocode.com/nalettes/"
+                                target="_blank"
+                            >
+                                Visit project <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div class="card">
+
+                        <div class="bento-card reveal reveal--delay-4">
+                            <span class="bento-card-index">04</span>
                             <h3>MindPrick</h3>
-                            <div class="card-content">
+                            <div class="bento-card-content">
                                 <p>
                                     Daily challenges to keep your coding logic
                                     sharp and refined.
@@ -305,96 +1191,170 @@
                 </div>
             </section>
 
-            <section id="profiles">
-                <h2>Connect With Us</h2>
-                <div class="social-links">
-                    <a
-                        href="https://facebook.com/guyswhocode"
-                        target="_blank"
-                        aria-label="Facebook"
-                        ><i class="fab fa-facebook"></i
-                    ></a>
-                    <a
-                        href="https://github.com/guyswhocode"
-                        target="_blank"
-                        aria-label="Github"
-                        ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                        href="https://instagram.com/guyswhocode"
-                        target="_blank"
-                        aria-label="Instagram"
-                        ><i class="fab fa-instagram"></i
-                    ></a>
-                    <a
-                        href="https://linkedin.com/company/guyswhocode"
-                        target="_blank"
-                        aria-label="Linkedin"
-                        ><i class="fab fa-linkedin"></i
-                    ></a>
-                    <a
-                        href="https://pinterest.com/guyswhocode"
-                        target="_blank"
-                        aria-label="Pinterest"
-                        ><i class="fab fa-pinterest"></i
-                    ></a>
-                    <a
-                        href="https://x.com/guyswhoc0de"
-                        target="_blank"
-                        aria-label="Twitter"
-                        ><i class="fab fa-x-twitter"></i
-                    ></a>
-                    <a
-                        href="https://youtube.com/@guyswhocode"
-                        target="_blank"
-                        aria-label="Youtube"
-                        ><i class="fab fa-youtube"></i
-                    ></a>
+            <!-- Connect -->
+            <section id="profiles" class="section--alt">
+                <div class="container">
+                    <p class="section-label reveal">Connect</p>
+                    <h2 class="reveal" style="margin-bottom: 1.5rem">
+                        Find us online
+                    </h2>
+                    <div class="social-grid reveal">
+                        <a
+                            href="https://facebook.com/guyswhocode"
+                            target="_blank"
+                            aria-label="Facebook"
+                            class="social-btn"
+                            ><i class="fab fa-facebook"></i
+                        ></a>
+                        <a
+                            href="https://github.com/guyswhocode"
+                            target="_blank"
+                            aria-label="Github"
+                            class="social-btn"
+                            ><i class="fab fa-github"></i
+                        ></a>
+                        <a
+                            href="https://instagram.com/guyswhocode"
+                            target="_blank"
+                            aria-label="Instagram"
+                            class="social-btn"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                        <a
+                            href="https://linkedin.com/company/guyswhocode"
+                            target="_blank"
+                            aria-label="Linkedin"
+                            class="social-btn"
+                            ><i class="fab fa-linkedin"></i
+                        ></a>
+                        <a
+                            href="https://pinterest.com/guyswhocode"
+                            target="_blank"
+                            aria-label="Pinterest"
+                            class="social-btn"
+                            ><i class="fab fa-pinterest"></i
+                        ></a>
+                        <a
+                            href="https://x.com/guyswhoc0de"
+                            target="_blank"
+                            aria-label="Twitter"
+                            class="social-btn"
+                            ><i class="fab fa-x-twitter"></i
+                        ></a>
+                        <a
+                            href="https://youtube.com/@guyswhocode"
+                            target="_blank"
+                            aria-label="Youtube"
+                            class="social-btn"
+                            ><i class="fab fa-youtube"></i
+                        ></a>
+                    </div>
                 </div>
             </section>
         </main>
 
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Guys Who Code. Built with passion.</p>
+            <p>&copy; 2026 Guys Who Code. Built with <span>passion</span>.</p>
         </footer>
 
+        <!-- Back to Top -->
         <button id="backToTop" title="Go to top">
             <i class="fas fa-arrow-up"></i>
         </button>
 
+        <!-- ============================================================
+        JavaScript
+        ============================================================ -->
         <script>
-            // Theme Toggle Logic
-            const themeToggle = document.getElementById("theme-toggle");
-            const body = document.documentElement;
-            const icon = themeToggle.querySelector("i");
+            (function () {
+                "use strict";
 
-            themeToggle.addEventListener("click", () => {
-                if (body.getAttribute("data-theme") === "dark") {
-                    body.setAttribute("data-theme", "light");
-                    icon.classList.replace("fa-moon", "fa-sun");
+                /* -------- 1. Navbar scroll state ---------- */
+                const navbar = document.getElementById("navbar");
+
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 40) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                });
+
+                /* -------- 2. Scroll reveal (Intersection Observer) ---------- */
+                const revealElements = document.querySelectorAll(".reveal");
+
+                if ("IntersectionObserver" in window) {
+                    const observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach((entry) => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add("visible");
+                                    // Optionally unobserve after reveal
+                                    // observer.unobserve(entry.target);
+                                }
+                            });
+                        },
+                        {
+                            threshold: 0.15,
+                            rootMargin: "0px 0px -60px 0px",
+                        }
+                    );
+
+                    revealElements.forEach((el) => observer.observe(el));
                 } else {
-                    body.setAttribute("data-theme", "dark");
-                    icon.classList.replace("fa-sun", "fa-moon");
+                    // Fallback: show all immediately
+                    revealElements.forEach((el) =>
+                        el.classList.add("visible")
+                    );
                 }
-            });
 
-            // Back to Top Logic
-            const backToTopBtn = document.getElementById("backToTop");
+                /* -------- 3. Bento card spotlight effect ---------- */
+                const cards = document.querySelectorAll(".bento-card");
 
-            window.onscroll = function () {
-                if (
-                    document.body.scrollTop > 300 ||
-                    document.documentElement.scrollTop > 300
-                ) {
-                    backToTopBtn.style.display = "block";
-                } else {
-                    backToTopBtn.style.display = "none";
-                }
-            };
+                cards.forEach((card) => {
+                    card.addEventListener("mousemove", (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = ((e.clientX - rect.left) / rect.width) * 100;
+                        const y = ((e.clientY - rect.top) / rect.height) * 100;
+                        card.style.setProperty("--mx", x + "%");
+                        card.style.setProperty("--my", y + "%");
+                    });
+                });
 
-            backToTopBtn.addEventListener("click", () => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
+                /* -------- 4. Theme toggle ---------- */
+                const themeToggle = document.getElementById("theme-toggle");
+                const htmlEl = document.documentElement;
+                const icon = themeToggle.querySelector("i");
+
+                themeToggle.addEventListener("click", () => {
+                    if (htmlEl.getAttribute("data-theme") === "dark") {
+                        htmlEl.setAttribute("data-theme", "light");
+                        icon.classList.replace("fa-moon", "fa-sun");
+                    } else {
+                        htmlEl.setAttribute("data-theme", "dark");
+                        icon.classList.replace("fa-sun", "fa-moon");
+                    }
+                });
+
+                /* -------- 5. Back to top ---------- */
+                const backBtn = document.getElementById("backToTop");
+
+                window.addEventListener("scroll", () => {
+                    if (
+                        document.body.scrollTop > 300 ||
+                        document.documentElement.scrollTop > 300
+                    ) {
+                        backBtn.classList.add("visible");
+                    } else {
+                        backBtn.classList.remove("visible");
+                    }
+                });
+
+                backBtn.addEventListener("click", () => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            })();
         </script>
     </body>
 </html>
