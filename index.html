@@ -69,7 +69,9 @@
                 background: var(--bg);
                 color: var(--text);
                 line-height: 1.7;
-                transition: background 0.5s ease, color 0.5s ease;
+                transition:
+                    background 0.5s ease,
+                    color 0.5s ease;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 overflow-x: hidden;
@@ -123,7 +125,9 @@
                 right: 0;
                 z-index: 100;
                 padding: 0 2rem;
-                transition: background 0.4s ease, backdrop-filter 0.4s ease,
+                transition:
+                    background 0.4s ease,
+                    backdrop-filter 0.4s ease,
                     box-shadow 0.4s ease;
             }
 
@@ -208,7 +212,9 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 0.95rem;
-                transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+                transition:
+                    color 0.25s var(--ease),
+                    border-color 0.25s var(--ease);
             }
 
             #theme-toggle:hover {
@@ -328,7 +334,8 @@
                 letter-spacing: 0;
                 color: var(--text-dim);
                 opacity: 0;
-                animation: codeFloat var(--dur, 14s) ease-in-out var(--del, 0s) infinite;
+                animation: codeFloat var(--dur, 14s) ease-in-out var(--del, 0s)
+                    infinite;
                 user-select: none;
                 will-change: transform;
                 line-height: 1;
@@ -338,14 +345,14 @@
                 color: var(--green);
                 opacity: 0;
             }
-            .code-char:nth-child(5n+2) {
+            .code-char:nth-child(5n + 2) {
                 color: var(--blue);
                 opacity: 0;
             }
-            .code-char:nth-child(7n+3) {
+            .code-char:nth-child(7n + 3) {
                 font-size: 0.65rem;
             }
-            .code-char:nth-child(6n+5) {
+            .code-char:nth-child(6n + 5) {
                 font-size: 1.05rem;
             }
 
@@ -377,14 +384,16 @@
                 }
                 8% {
                     opacity: var(--max-op, 0.12);
-                    transform: translateY(2%) translateX(var(--drift-x, 8px)) scale(1);
+                    transform: translateY(2%) translateX(var(--drift-x, 8px))
+                        scale(1);
                 }
                 85% {
                     opacity: var(--max-op, 0.12);
                 }
                 100% {
                     opacity: 0;
-                    transform: translateY(calc(-100vh - 60px)) translateX(var(--drift-x-end, -12px)) scale(0.85);
+                    transform: translateY(calc(-100vh - 60px))
+                        translateX(var(--drift-x-end, -12px)) scale(0.85);
                 }
             }
 
@@ -456,7 +465,8 @@
                 animation: gradientShift 6s ease-in-out infinite;
                 opacity: 0;
                 transform: translateY(20px);
-                animation: gradientShift 6s ease-in-out infinite,
+                animation:
+                    gradientShift 6s ease-in-out infinite,
                     fadeSlideUp 0.7s var(--ease-out) 0.4s forwards;
             }
 
@@ -577,7 +587,8 @@
             .reveal {
                 opacity: 0;
                 transform: translateY(30px);
-                transition: opacity 0.7s var(--ease-out),
+                transition:
+                    opacity 0.7s var(--ease-out),
                     transform 0.7s var(--ease-out);
             }
 
@@ -617,11 +628,7 @@
                 font-weight: 700;
                 line-height: 1;
                 font-family: "Source Code Pro", monospace;
-                background: linear-gradient(
-                    180deg,
-                    var(--green),
-                    var(--blue)
-                );
+                background: linear-gradient(180deg, var(--green), var(--blue));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -697,7 +704,9 @@
             .bento-card:hover {
                 background: var(--bg-card-hover);
                 border-color: transparent;
-                box-shadow: var(--shadow-hover), 0 0 0 1px var(--green-glow);
+                box-shadow:
+                    var(--shadow-hover),
+                    0 0 0 1px var(--green-glow);
                 transform: translateY(-6px);
             }
 
@@ -760,7 +769,9 @@
                 margin-top: 1.25rem;
                 position: relative;
                 z-index: 1;
-                transition: color 0.3s var(--ease), gap 0.3s var(--ease);
+                transition:
+                    color 0.3s var(--ease),
+                    gap 0.3s var(--ease);
             }
 
             .bento-card-link i {
@@ -1055,26 +1066,266 @@
 
             <!-- Floating code characters -->
             <div class="hero-code-rain" aria-hidden="true">
-                <span class="code-char" style="left: 6%; top: 70%; --dur: 16s; --del: 0s; --drift-x: 12px; --drift-x-end: -8px; --max-op: 0.38;">&lt;/&gt;</span>
-                <span class="code-char" style="left: 14%; top: 50%; --dur: 20s; --del: 2s; --drift-x: -10px; --drift-x-end: 14px; --max-op: 0.28;">const</span>
-                <span class="code-char" style="left: 22%; top: 85%; --dur: 13s; --del: 5s; --drift-x: 8px; --drift-x-end: -6px; --max-op: 0.32;">{ }</span>
-                <span class="code-char" style="left: 30%; top: 40%; --dur: 18s; --del: 1s; --drift-x: -14px; --drift-x-end: 10px; --max-op: 0.22;">=&gt;</span>
-                <span class="code-char" style="left: 38%; top: 60%; --dur: 15s; --del: 7s; --drift-x: 6px; --drift-x-end: -10px; --max-op: 0.36;">fn()</span>
-                <span class="code-char" style="left: 46%; top: 30%; --dur: 22s; --del: 4s; --drift-x: -8px; --drift-x-end: 16px; --max-op: 0.25;">0101</span>
-                <span class="code-char" style="left: 54%; top: 75%; --dur: 14s; --del: 9s; --drift-x: 10px; --drift-x-end: -12px; --max-op: 0.30;">[ ]</span>
-                <span class="code-char" style="left: 62%; top: 45%; --dur: 19s; --del: 3s; --drift-x: -12px; --drift-x-end: 8px; --max-op: 0.34;">//</span>
-                <span class="code-char" style="left: 70%; top: 80%; --dur: 17s; --del: 6s; --drift-x: 14px; --drift-x-end: -6px; --max-op: 0.28;">let</span>
-                <span class="code-char" style="left: 78%; top: 55%; --dur: 21s; --del: 10s; --drift-x: -6px; --drift-x-end: 14px; --max-op: 0.22;">===</span>
-                <span class="code-char" style="left: 86%; top: 35%; --dur: 16s; --del: 8s; --drift-x: 8px; --drift-x-end: -10px; --max-op: 0.32;">async</span>
-                <span class="code-char" style="left: 92%; top: 65%; --dur: 18s; --del: 0s; --drift-x: -10px; --drift-x-end: 12px; --max-op: 0.25;">await</span>
-                <span class="code-char" style="left: 10%; top: 20%; --dur: 24s; --del: 12s; --drift-x: 6px; --drift-x-end: -14px; --max-op: 0.20;">import</span>
-                <span class="code-char" style="left: 50%; top: 15%; --dur: 15s; --del: 11s; --drift-x: -16px; --drift-x-end: 8px; --max-op: 0.28;">export</span>
-                <span class="code-char" style="left: 34%; top: 90%; --dur: 20s; --del: 14s; --drift-x: 12px; --drift-x-end: -4px; --max-op: 0.18;">class</span>
-                <span class="code-char" style="left: 76%; top: 20%; --dur: 17s; --del: 13s; --drift-x: -8px; --drift-x-end: 6px; --max-op: 0.30;">null</span>
-                <span class="code-char" style="left: 44%; top: 95%; --dur: 22s; --del: 16s; --drift-x: 4px; --drift-x-end: -12px; --max-op: 0.20;">&amp;&amp;</span>
-                <span class="code-char" style="left: 18%; top: 10%; --dur: 19s; --del: 15s; --drift-x: -6px; --drift-x-end: 10px; --max-op: 0.25;">typeof</span>
-                <span class="code-char" style="left: 60%; top: 10%; --dur: 16s; --del: 17s; --drift-x: 10px; --drift-x-end: -8px; --max-op: 0.22;">? .</span>
-                <span class="code-char" style="left: 26%; top: 30%; --dur: 23s; --del: 18s; --drift-x: -12px; --drift-x-end: 14px; --max-op: 0.18;">yield</span>
+                <span
+                    class="code-char"
+                    style="
+                        left: 6%;
+                        top: 70%;
+                        --dur: 16s;
+                        --del: 0s;
+                        --drift-x: 12px;
+                        --drift-x-end: -8px;
+                        --max-op: 0.38;
+                    "
+                    >&lt;/&gt;</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 14%;
+                        top: 50%;
+                        --dur: 20s;
+                        --del: 2s;
+                        --drift-x: -10px;
+                        --drift-x-end: 14px;
+                        --max-op: 0.28;
+                    "
+                    >const</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 22%;
+                        top: 85%;
+                        --dur: 13s;
+                        --del: 5s;
+                        --drift-x: 8px;
+                        --drift-x-end: -6px;
+                        --max-op: 0.32;
+                    "
+                    >{ }</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 30%;
+                        top: 40%;
+                        --dur: 18s;
+                        --del: 1s;
+                        --drift-x: -14px;
+                        --drift-x-end: 10px;
+                        --max-op: 0.22;
+                    "
+                    >=&gt;</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 38%;
+                        top: 60%;
+                        --dur: 15s;
+                        --del: 7s;
+                        --drift-x: 6px;
+                        --drift-x-end: -10px;
+                        --max-op: 0.36;
+                    "
+                    >fn()</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 46%;
+                        top: 30%;
+                        --dur: 22s;
+                        --del: 4s;
+                        --drift-x: -8px;
+                        --drift-x-end: 16px;
+                        --max-op: 0.25;
+                    "
+                    >0101</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 54%;
+                        top: 75%;
+                        --dur: 14s;
+                        --del: 9s;
+                        --drift-x: 10px;
+                        --drift-x-end: -12px;
+                        --max-op: 0.3;
+                    "
+                    >[ ]</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 62%;
+                        top: 45%;
+                        --dur: 19s;
+                        --del: 3s;
+                        --drift-x: -12px;
+                        --drift-x-end: 8px;
+                        --max-op: 0.34;
+                    "
+                    >//</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 70%;
+                        top: 80%;
+                        --dur: 17s;
+                        --del: 6s;
+                        --drift-x: 14px;
+                        --drift-x-end: -6px;
+                        --max-op: 0.28;
+                    "
+                    >let</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 78%;
+                        top: 55%;
+                        --dur: 21s;
+                        --del: 10s;
+                        --drift-x: -6px;
+                        --drift-x-end: 14px;
+                        --max-op: 0.22;
+                    "
+                    >===</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 86%;
+                        top: 35%;
+                        --dur: 16s;
+                        --del: 8s;
+                        --drift-x: 8px;
+                        --drift-x-end: -10px;
+                        --max-op: 0.32;
+                    "
+                    >async</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 92%;
+                        top: 65%;
+                        --dur: 18s;
+                        --del: 0s;
+                        --drift-x: -10px;
+                        --drift-x-end: 12px;
+                        --max-op: 0.25;
+                    "
+                    >await</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 10%;
+                        top: 20%;
+                        --dur: 24s;
+                        --del: 12s;
+                        --drift-x: 6px;
+                        --drift-x-end: -14px;
+                        --max-op: 0.2;
+                    "
+                    >import</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 50%;
+                        top: 15%;
+                        --dur: 15s;
+                        --del: 11s;
+                        --drift-x: -16px;
+                        --drift-x-end: 8px;
+                        --max-op: 0.28;
+                    "
+                    >export</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 34%;
+                        top: 90%;
+                        --dur: 20s;
+                        --del: 14s;
+                        --drift-x: 12px;
+                        --drift-x-end: -4px;
+                        --max-op: 0.18;
+                    "
+                    >class</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 76%;
+                        top: 20%;
+                        --dur: 17s;
+                        --del: 13s;
+                        --drift-x: -8px;
+                        --drift-x-end: 6px;
+                        --max-op: 0.3;
+                    "
+                    >null</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 44%;
+                        top: 95%;
+                        --dur: 22s;
+                        --del: 16s;
+                        --drift-x: 4px;
+                        --drift-x-end: -12px;
+                        --max-op: 0.2;
+                    "
+                    >&amp;&amp;</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 18%;
+                        top: 10%;
+                        --dur: 19s;
+                        --del: 15s;
+                        --drift-x: -6px;
+                        --drift-x-end: 10px;
+                        --max-op: 0.25;
+                    "
+                    >typeof</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 60%;
+                        top: 10%;
+                        --dur: 16s;
+                        --del: 17s;
+                        --drift-x: 10px;
+                        --drift-x-end: -8px;
+                        --max-op: 0.22;
+                    "
+                    >? .</span
+                >
+                <span
+                    class="code-char"
+                    style="
+                        left: 26%;
+                        top: 30%;
+                        --dur: 23s;
+                        --del: 18s;
+                        --drift-x: -12px;
+                        --drift-x-end: 14px;
+                        --max-op: 0.18;
+                    "
+                    >yield</span
+                >
             </div>
 
             <!-- Click burst container -->
@@ -1322,15 +1573,13 @@
                         {
                             threshold: 0.15,
                             rootMargin: "0px 0px -60px 0px",
-                        }
+                        },
                     );
 
                     revealElements.forEach((el) => observer.observe(el));
                 } else {
                     // Fallback: show all immediately
-                    revealElements.forEach((el) =>
-                        el.classList.add("visible")
-                    );
+                    revealElements.forEach((el) => el.classList.add("visible"));
                 }
 
                 /* -------- 3. Bento card spotlight effect ---------- */
@@ -1365,11 +1614,33 @@
                 const hero = document.getElementById("hero");
                 const clickBurst = document.getElementById("clickBurst");
                 const burstChars = [
-                    "&lt;/&gt;", "const", "let", "=&gt;", "{ }", "[ ]",
-                    "//", "fn()", "async", "await", "class", "import",
-                    "export", "===", "&amp;&amp;", "||", "&lt;&gt;",
-                    "0101", "true", "false", "null", "typeof", "yield",
-                    "&lt;div&gt;", "#!", "=&gt;", "return", "void"
+                    "const",
+                    "let",
+                    "==",
+                    "{ }",
+                    "[ ]",
+                    "//",
+                    "fn()",
+                    "async",
+                    "await",
+                    "class",
+                    "import",
+                    "export",
+                    "===",
+                    "&&",
+                    "||",
+                    "<=",
+                    "!=",
+                    "true",
+                    "false",
+                    "null",
+                    "typeof",
+                    "yield",
+                    "undefined",
+                    "for",
+                    "while",
+                    "return",
+                    "switch",
                 ];
 
                 function spawnClickBurst(e) {
@@ -1381,17 +1652,26 @@
                     for (let i = 0; i < count; i++) {
                         const char = document.createElement("span");
                         char.className = "click-char";
-                        char.textContent = burstChars[Math.floor(Math.random() * burstChars.length)];
+                        char.textContent =
+                            burstChars[
+                                Math.floor(Math.random() * burstChars.length)
+                            ];
 
                         const size = 0.7 + Math.random() * 0.8;
                         const colors = [
-                            "var(--green)", "var(--blue)", "var(--text-dim)",
-                            "var(--text-secondary)", "#e8eaed"
+                            "var(--green)",
+                            "var(--blue)",
+                            "var(--text-dim)",
+                            "var(--text-secondary)",
+                            "#e8eaed",
                         ];
-                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        const color =
+                            colors[Math.floor(Math.random() * colors.length)];
 
                         // Random outward direction (biased upward)
-                        const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 0.8;
+                        const angle =
+                            -Math.PI / 2 +
+                            (Math.random() - 0.5) * Math.PI * 0.8;
                         const distance = 80 + Math.random() * 150;
                         const dx = Math.cos(angle) * distance;
                         const dy = Math.sin(angle) * distance;
