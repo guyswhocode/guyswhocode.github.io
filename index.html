@@ -349,6 +349,27 @@
                 font-size: 1.05rem;
             }
 
+            /* ===== Click burst characters ===== */
+            .click-burst {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+                z-index: 2;
+            }
+
+            .click-char {
+                position: absolute;
+                font-family: "Source Code Pro", monospace;
+                font-weight: 600;
+                letter-spacing: 0;
+                line-height: 1;
+                user-select: none;
+                pointer-events: none;
+                will-change: transform, opacity;
+                z-index: 5;
+            }
+
             @keyframes codeFloat {
                 0% {
                     opacity: 0;
@@ -1056,6 +1077,9 @@
                 <span class="code-char" style="left: 26%; top: 30%; --dur: 23s; --del: 18s; --drift-x: -12px; --drift-x-end: 14px; --max-op: 0.18;">yield</span>
             </div>
 
+            <!-- Click burst container -->
+            <div class="click-burst" id="clickBurst"></div>
+
             <div class="hero-content container">
                 <div class="hero-badge">
                     <span class="hero-badge-dot"></span>
@@ -1337,7 +1361,80 @@
                     }
                 });
 
-                /* -------- 5. Back to top ---------- */
+                /* -------- 5. Click burst on hero ---------- */
+                const hero = document.getElementById("hero");
+                const clickBurst = document.getElementById("clickBurst");
+                const burstChars = [
+                    "&lt;/&gt;", "const", "let", "=&gt;", "{ }", "[ ]",
+                    "//", "fn()", "async", "await", "class", "import",
+                    "export", "===", "&amp;&amp;", "||", "&lt;&gt;",
+                    "0101", "true", "false", "null", "typeof", "yield",
+                    "&lt;div&gt;", "#!", "=&gt;", "return", "void"
+                ];
+
+                function spawnClickBurst(e) {
+                    const rect = hero.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const count = 5 + Math.floor(Math.random() * 2); // 5 or 6
+
+                    for (let i = 0; i < count; i++) {
+                        const char = document.createElement("span");
+                        char.className = "click-char";
+                        char.textContent = burstChars[Math.floor(Math.random() * burstChars.length)];
+
+                        const size = 0.7 + Math.random() * 0.8;
+                        const colors = [
+                            "var(--green)", "var(--blue)", "var(--text-dim)",
+                            "var(--text-secondary)", "#e8eaed"
+                        ];
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+
+                        // Random outward direction (biased upward)
+                        const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 0.8;
+                        const distance = 80 + Math.random() * 150;
+                        const dx = Math.cos(angle) * distance;
+                        const dy = Math.sin(angle) * distance;
+                        const dur = 0.6 + Math.random() * 0.6;
+                        const scale = 0.6 + Math.random() * 0.6;
+                        const rotation = (Math.random() - 0.5) * 360;
+
+                        // Set initial position (hidden, at origin)
+                        char.style.cssText = [
+                            `left: ${x}px`,
+                            `top: ${y}px`,
+                            `font-size: ${size}rem`,
+                            `color: ${color}`,
+                            `opacity: 0`,
+                            `transform: translate(0, 0) scale(0.5)`,
+                        ].join("; ");
+
+                        clickBurst.appendChild(char);
+
+                        // Force reflow so initial styles are committed
+                        char.offsetHeight;
+
+                        // Animate to final state
+                        char.style.transition = [
+                            `transform ${dur}s cubic-bezier(0.16, 1, 0.3, 1)`,
+                            `opacity ${dur * 0.2}s ease-out`,
+                        ].join(", ");
+                        char.style.transform = `translate(${dx}px, ${dy}px) rotate(${rotation}deg) scale(${scale})`;
+                        char.style.opacity = "1";
+
+                        // Fade out and remove
+                        setTimeout(() => {
+                            char.style.opacity = "0";
+                            setTimeout(() => {
+                                if (char.parentNode) {
+                                    char.parentNode.removeChild(char);
+                                }
+                            }, 200);
+                        }, dur * 700);
+                    }
+                }
+
+                hero.addEventListener("click", spawnClickBurst);
                 const backBtn = document.getElementById("backToTop");
 
                 window.addEventListener("scroll", () => {
