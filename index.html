@@ -654,27 +654,20 @@
             }
 
             /* ============================================================
-               Projects (bento grid)
+               Projects (equal-width grid)
                ============================================================ */
-            .bento-grid {
+            .projects-grid {
                 display: grid;
-                gap: 1rem;
+                gap: 1.25rem;
             }
 
-            /* Desktop: 2×2 bento with alternating spans */
             @media (min-width: 640px) {
-                .bento-grid {
-                    grid-template-columns: 1.15fr 0.85fr;
-                }
-                .bento-card:nth-child(3) {
-                    grid-column: 1;
-                }
-                .bento-card:nth-child(4) {
-                    grid-column: 2;
+                .projects-grid {
+                    grid-template-columns: 1fr 1fr;
                 }
             }
 
-            .bento-card {
+            .project-card {
                 background: var(--bg-card);
                 border: 1px solid var(--border);
                 border-radius: var(--radius);
@@ -688,7 +681,10 @@
                 cursor: default;
             }
 
-            .bento-card::after {
+
+
+            /* Subtle dot pattern overlay */
+            .project-card::after {
                 content: "";
                 position: absolute;
                 inset: 0;
@@ -704,7 +700,7 @@
                 pointer-events: none;
             }
 
-            .bento-card:hover {
+            .project-card:hover {
                 background: var(--bg-card-hover);
                 border-color: transparent;
                 box-shadow:
@@ -713,23 +709,33 @@
                 transform: translateY(-6px);
             }
 
-            .bento-card:hover::after {
+            .project-card:hover::after {
                 opacity: 0.8;
             }
 
-            .bento-card-index {
+            .project-card-index {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 8px;
+                background: var(--bg-alt);
+                border: 1px solid var(--border);
                 font-size: 0.7rem;
-                font-weight: 600;
+                font-weight: 700;
                 color: var(--text-dim);
-                letter-spacing: 0.06em;
                 font-family: "Source Code Pro", monospace;
-                margin-bottom: 1rem;
+                margin-bottom: 1.25rem;
                 position: relative;
                 z-index: 1;
+                transition: all 0.3s var(--ease);
             }
 
-            .bento-card h3 {
-                font-size: 1.2rem;
+
+
+            .project-card h3 {
+                font-size: 1.15rem;
                 font-weight: 600;
                 color: var(--text);
                 margin-bottom: 0.75rem;
@@ -738,30 +744,30 @@
                 z-index: 1;
             }
 
-            .bento-card h3 a {
+            .project-card h3 a {
                 text-decoration: none;
                 color: inherit;
                 transition: color 0.3s var(--ease);
             }
 
-            .bento-card h3 a:hover {
+            .project-card h3 a:hover {
                 color: var(--green);
             }
 
-            .bento-card-content {
+            .project-card-content {
                 position: relative;
                 z-index: 1;
                 flex: 1;
             }
 
-            .bento-card-content p {
+            .project-card-content p {
                 color: var(--text-secondary);
                 font-size: 0.925rem;
                 line-height: 1.65;
                 margin: 0;
             }
 
-            .bento-card-link {
+            .project-card-link {
                 display: inline-flex;
                 align-items: center;
                 gap: 0.4rem;
@@ -777,17 +783,17 @@
                     gap 0.3s var(--ease);
             }
 
-            .bento-card-link i {
+            .project-card-link i {
                 font-size: 0.65rem;
                 transition: transform 0.3s var(--ease);
             }
 
-            .bento-card:hover .bento-card-link {
+            .project-card:hover .project-card-link {
                 color: var(--green);
                 gap: 0.6rem;
             }
 
-            .bento-card:hover .bento-card-link i {
+            .project-card:hover .project-card-link i {
                 transform: translateX(3px);
             }
 
@@ -1017,10 +1023,10 @@
                     font-size: 1rem;
                 }
 
-                .bento-grid {
+                .projects-grid {
                     gap: 0.85rem;
                 }
-                .bento-card {
+                .project-card {
                     padding: 1.5rem;
                 }
 
@@ -1387,9 +1393,9 @@
                     <h2 class="reveal" style="margin-bottom: 1.5rem">
                         What we build
                     </h2>
-                    <div class="bento-grid">
-                        <div class="bento-card reveal reveal--delay-1">
-                            <span class="bento-card-index">01</span>
+                    <div class="projects-grid">
+                        <div class="project-card reveal reveal--delay-1">
+                            <span class="project-card-index">01</span>
                             <h3>
                                 <a
                                     href="https://letsallchef.github.io/"
@@ -1397,14 +1403,14 @@
                                     >Lets All Chef</a
                                 >
                             </h3>
-                            <div class="bento-card-content">
+                            <div class="project-card-content">
                                 <p>
                                     A collaborative platform for culinary
                                     enthusiasts to share and discover recipes.
                                 </p>
                             </div>
                             <a
-                                class="bento-card-link"
+                                class="project-card-link"
                                 href="https://letsallchef.github.io/"
                                 target="_blank"
                             >
@@ -1412,8 +1418,8 @@
                             </a>
                         </div>
 
-                        <div class="bento-card reveal reveal--delay-2">
-                            <span class="bento-card-index">02</span>
+                        <div class="project-card reveal reveal--delay-2">
+                            <span class="project-card-index">02</span>
                             <h3>
                                 <a
                                     href="https://guyswhocode.com/hn"
@@ -1421,14 +1427,14 @@
                                     >HN</a
                                 >
                             </h3>
-                            <div class="bento-card-content">
+                            <div class="project-card-content">
                                 <p>
                                     Modern, elegant and mobile friendly
                                     Hackernews browser client.
                                 </p>
                             </div>
                             <a
-                                class="bento-card-link"
+                                class="project-card-link"
                                 href="https://guyswhocode.com/hn"
                                 target="_blank"
                             >
@@ -1436,8 +1442,8 @@
                             </a>
                         </div>
 
-                        <div class="bento-card reveal reveal--delay-3">
-                            <span class="bento-card-index">03</span>
+                        <div class="project-card reveal reveal--delay-3">
+                            <span class="project-card-index">03</span>
                             <h3>
                                 <a
                                     href="https://guyswhocode.com/nalettes/"
@@ -1445,14 +1451,14 @@
                                     >Nalettes</a
                                 >
                             </h3>
-                            <div class="bento-card-content">
+                            <div class="project-card-content">
                                 <p>
                                     Focusing on minimalist design patterns and
                                     color palettes.
                                 </p>
                             </div>
                             <a
-                                class="bento-card-link"
+                                class="project-card-link"
                                 href="https://guyswhocode.com/nalettes/"
                                 target="_blank"
                             >
@@ -1460,10 +1466,10 @@
                             </a>
                         </div>
 
-                        <div class="bento-card reveal reveal--delay-4">
-                            <span class="bento-card-index">04</span>
+                        <div class="project-card reveal reveal--delay-4">
+                            <span class="project-card-index">04</span>
                             <h3>MindPrick</h3>
-                            <div class="bento-card-content">
+                            <div class="project-card-content">
                                 <p>
                                     Daily challenges to keep your coding logic
                                     sharp and refined.
@@ -1591,7 +1597,7 @@
                 }
 
                 /* -------- 3. Bento card spotlight effect ---------- */
-                const cards = document.querySelectorAll(".bento-card");
+                const cards = document.querySelectorAll(".project-card");
 
                 cards.forEach((card) => {
                     card.addEventListener("mousemove", (e) => {
