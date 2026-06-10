@@ -4,6 +4,20 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Guys Who Code</title>
+        <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+        <meta property="og:title" content="Guys Who Code" />
+        <meta property="og:description" content="Learning to code, one byte at a time" />
+        <meta property="og:image" content="/assets/img/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Guys Who Code" />
+        <meta name="twitter:description" content="Learning to code, one byte at a time" />
+        <meta name="twitter:image" content="/assets/img/og-image.png" />
         <style>
             /* ============================================================
                CSS Custom Properties
@@ -23,9 +37,10 @@
                 --border: rgba(255, 255, 255, 0.05);
                 --border-hover: rgba(255, 255, 255, 0.12);
                 --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.35);
-                --shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.55);
+                --shadow-hover: 0 24px 48px rgba(51, 187, 119, 0.15), 0 8px 16px rgba(0, 0, 0, 0.4);
                 --radius: 14px;
                 --radius-sm: 10px;
+                --hero-bg: linear-gradient(180deg, #0d0f10 0%, #070809 100%);
                 --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
                 --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -36,6 +51,7 @@
                 --blue: #2b8bcc;
                 --green-glow: rgba(45, 170, 107, 0.08);
                 --blue-glow: rgba(43, 139, 204, 0.08);
+                --hero-bg: linear-gradient(180deg, #f4f5f7 0%, #ffffff 100%);
                 --bg: #f4f5f7;
                 --bg-alt: #ffffff;
                 --bg-card: #ffffff;
@@ -202,7 +218,7 @@
 
             #theme-toggle {
                 background: transparent;
-                border: 1px solid var(--border);
+                border: none;
                 color: var(--text-dim);
                 width: 40px;
                 height: 40px;
@@ -213,13 +229,11 @@
                 justify-content: center;
                 font-size: 0.95rem;
                 transition:
-                    color 0.25s var(--ease),
-                    border-color 0.25s var(--ease);
+                    color 0.25s var(--ease);
             }
 
             #theme-toggle:hover {
                 color: var(--text-secondary);
-                border-color: var(--text-dim);
             }
 
             /* ============================================================
@@ -234,57 +248,10 @@
                 position: relative;
                 padding: 7rem 0 5rem;
                 overflow: hidden;
+                background: var(--hero-bg);
             }
 
-            /* Floating decorative blobs */
-            .hero-blob {
-                position: absolute;
-                border-radius: 50%;
-                filter: blur(80px);
-                opacity: 0.15;
-                pointer-events: none;
-                animation: blobFloat 20s ease-in-out infinite;
-            }
 
-            .hero-blob--1 {
-                width: 400px;
-                height: 400px;
-                background: var(--green);
-                top: -5%;
-                left: -8%;
-                animation-delay: 0s;
-            }
-
-            .hero-blob--2 {
-                width: 350px;
-                height: 350px;
-                background: var(--blue);
-                bottom: -5%;
-                right: -8%;
-                animation-delay: -7s;
-            }
-
-            .hero-blob--3 {
-                width: 200px;
-                height: 200px;
-                background: var(--green);
-                top: 60%;
-                left: 50%;
-                animation-delay: -14s;
-            }
-
-            @keyframes blobFloat {
-                0%,
-                100% {
-                    transform: translate(0, 0) scale(1);
-                }
-                33% {
-                    transform: translate(30px, -30px) scale(1.08);
-                }
-                66% {
-                    transform: translate(-20px, 20px) scale(0.95);
-                }
-            }
 
             .hero-grid-dots {
                 position: absolute;
@@ -402,43 +369,7 @@
                 z-index: 1;
             }
 
-            .hero-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                padding: 0.35rem 1rem;
-                border: 1px solid var(--border);
-                border-radius: 100px;
-                font-size: 0.75rem;
-                font-weight: 500;
-                color: var(--text-secondary);
-                letter-spacing: 0.04em;
-                text-transform: uppercase;
-                margin-bottom: 2rem;
-                opacity: 0;
-                transform: translateY(12px);
-                animation: fadeSlideUp 0.6s var(--ease-out) 0.2s forwards;
-            }
 
-            .hero-badge-dot {
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: var(--green);
-                animation: pulseDot 2s ease-in-out infinite;
-            }
-
-            @keyframes pulseDot {
-                0%,
-                100% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-                50% {
-                    opacity: 0.4;
-                    transform: scale(0.8);
-                }
-            }
 
             @keyframes fadeSlideUp {
                 to {
@@ -674,11 +605,17 @@
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
-                transition: all 0.4s var(--ease);
+                transition:
+                    box-shadow 0.4s var(--ease),
+                    background 0.4s var(--ease);
                 box-shadow: var(--shadow-card);
                 position: relative;
                 overflow: hidden;
                 cursor: default;
+            }
+
+            .project-card:hover {
+                box-shadow: var(--shadow-hover);
             }
 
 
@@ -700,18 +637,7 @@
                 pointer-events: none;
             }
 
-            .project-card:hover {
-                background: var(--bg-card-hover);
-                border-color: transparent;
-                box-shadow:
-                    var(--shadow-hover),
-                    0 0 0 1px var(--green-glow);
-                transform: translateY(-6px);
-            }
 
-            .project-card:hover::after {
-                opacity: 0.8;
-            }
 
             .project-card-index {
                 display: inline-flex;
@@ -788,14 +714,7 @@
                 transition: transform 0.3s var(--ease);
             }
 
-            .project-card:hover .project-card-link {
-                color: var(--green);
-                gap: 0.6rem;
-            }
 
-            .project-card:hover .project-card-link i {
-                transform: translateX(3px);
-            }
 
             /* ============================================================
                Social / Connect
@@ -1006,11 +925,7 @@
                     padding: 5rem 0 3rem;
                 }
 
-                .hero-blob--1,
-                .hero-blob--2,
-                .hero-blob--3 {
-                    display: none;
-                }
+
 
                 .mission-block {
                     gap: 0.5rem;
@@ -1060,8 +975,10 @@
         <nav id="navbar">
             <div class="nav-inner">
                 <div class="logo">
-                    <span class="logo-mark" aria-hidden="true"></span>
-                    Guys Who Code
+                    <a href="/" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: inherit;">
+                        <img src="/assets/img/logo.svg" alt="Guys Who Code" width="30" height="30" style="border-radius: 8px;" />
+                        Guys Who Code
+                    </a>
                 </div>
                 <div class="nav-actions">
                     <button id="theme-toggle" aria-label="Toggle Dark Mode">
@@ -1073,9 +990,6 @@
 
         <!-- Hero -->
         <header class="hero" id="hero">
-            <div class="hero-blob hero-blob--1"></div>
-            <div class="hero-blob hero-blob--2"></div>
-            <div class="hero-blob hero-blob--3"></div>
             <div class="hero-grid-dots"></div>
 
             <!-- Floating code characters -->
@@ -1346,10 +1260,7 @@
             <div class="click-burst" id="clickBurst"></div>
 
             <div class="hero-content container">
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    Community
-                </div>
+                <img src="/assets/img/logo.svg" alt="Guys Who Code" width="80" height="80" style="margin-bottom: 1.25rem; border-radius: 12px; display: block; margin-left: auto; margin-right: auto;" />
                 <h1 class="hero-title">Guys Who Code</h1>
                 <p class="hero-tagline">
                     Learning to code, one byte at a time
@@ -1595,19 +1506,6 @@
                     // Fallback: show all immediately
                     revealElements.forEach((el) => el.classList.add("visible"));
                 }
-
-                /* -------- 3. Bento card spotlight effect ---------- */
-                const cards = document.querySelectorAll(".project-card");
-
-                cards.forEach((card) => {
-                    card.addEventListener("mousemove", (e) => {
-                        const rect = card.getBoundingClientRect();
-                        const x = ((e.clientX - rect.left) / rect.width) * 100;
-                        const y = ((e.clientY - rect.top) / rect.height) * 100;
-                        card.style.setProperty("--mx", x + "%");
-                        card.style.setProperty("--my", y + "%");
-                    });
-                });
 
                 /* -------- 4. Theme toggle ---------- */
                 const themeToggle = document.getElementById("theme-toggle");
