@@ -52,6 +52,7 @@
                 --bg-card: #121416;
                 --bg-card-hover: #181b1d;
                 --text: #e8eaed;
+                --text-rgb: 232, 234, 237;
                 --text-secondary: #9aa0a6;
                 --text-dim: #5f656b;
                 --border: rgba(255, 255, 255, 0.05);
@@ -79,6 +80,7 @@
                 --bg-card: #ffffff;
                 --bg-card-hover: #f8f9fa;
                 --text: #1f2937;
+                --text-rgb: 31, 41, 55;
                 --text-secondary: #6b7280;
                 --text-dim: #9ca3af;
                 --border: rgba(0, 0, 0, 0.07);
@@ -743,8 +745,6 @@
                 width: 52px;
                 height: 52px;
                 border-radius: var(--radius-sm);
-                background: var(--bg-card);
-                border: 1px solid var(--border);
                 color: var(--text-secondary);
                 font-size: 1.2rem;
                 text-decoration: none;
@@ -781,6 +781,8 @@
             .social-btn[aria-label="Facebook"]:hover {
                 color: #1877f2;
                 border-color: #1877f2;
+                --shadow-hover: 0 24px 48px rgba(24, 119, 242, 0.25), 0 8px 16px rgba(24, 119, 242, 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Facebook"]::before {
                 background: rgba(24, 119, 242, 0.1);
@@ -792,6 +794,8 @@
             .social-btn[aria-label="Github"]:hover {
                 color: var(--text);
                 border-color: var(--text);
+                --shadow-hover: 0 24px 48px rgba(var(--text-rgb), 0.25), 0 8px 16px rgba(var(--text-rgb), 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Github"]::before {
                 background: var(--green-glow);
@@ -803,6 +807,8 @@
             .social-btn[aria-label="Instagram"]:hover {
                 color: #e4405f;
                 border-color: #e4405f;
+                --shadow-hover: 0 24px 48px rgba(228, 64, 95, 0.25), 0 8px 16px rgba(228, 64, 95, 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Instagram"]::before {
                 background: rgba(228, 64, 95, 0.1);
@@ -814,6 +820,8 @@
             .social-btn[aria-label="Linkedin"]:hover {
                 color: #0a66c2;
                 border-color: #0a66c2;
+                --shadow-hover: 0 24px 48px rgba(10, 102, 194, 0.25), 0 8px 16px rgba(10, 102, 194, 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Linkedin"]::before {
                 background: rgba(10, 102, 194, 0.1);
@@ -825,6 +833,8 @@
             .social-btn[aria-label="Pinterest"]:hover {
                 color: #bd081c;
                 border-color: #bd081c;
+                --shadow-hover: 0 24px 48px rgba(189, 8, 28, 0.25), 0 8px 16px rgba(189, 8, 28, 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Pinterest"]::before {
                 background: rgba(189, 8, 28, 0.1);
@@ -836,6 +846,8 @@
             .social-btn[aria-label="Twitter"]:hover {
                 color: var(--text);
                 border-color: var(--text);
+                --shadow-hover: 0 24px 48px rgba(var(--text-rgb), 0.25), 0 8px 16px rgba(var(--text-rgb), 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Twitter"]::before {
                 background: rgba(255, 255, 255, 0.04);
@@ -847,6 +859,8 @@
             .social-btn[aria-label="Youtube"]:hover {
                 color: #ff0000;
                 border-color: #ff0000;
+                --shadow-hover: 0 24px 48px rgba(255, 0, 0, 0.25), 0 8px 16px rgba(255, 0, 0, 0.15);
+                box-shadow: var(--shadow-hover);
             }
             .social-btn[aria-label="Youtube"]::before {
                 background: rgba(255, 0, 0, 0.1);
