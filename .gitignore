@@ -1,3 +1,31 @@
-_site/
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if used for tooling)
+node_modules/
+npm-debug.log*
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# OS generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Misc
 shell.sh
-.jekyll-cache/
+*.log
